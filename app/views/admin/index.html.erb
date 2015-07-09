@@ -1,0 +1,98 @@
+<style>
+ td>div{
+ 	height:100px;
+ 	overflow:auto; 
+ }
+</style>
+
+
+<div id="content">
+		<div id="content_content">
+		<div class="panel panel-info">
+		<div class="panel-heading" style="background:url(/assets/content/td4.png) repeat;color: #fff;font-size: 20px;padding:0px 4px 0px 4px">
+ 		<div class="menu_admin">
+  <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Players<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+           	<li><%= link_to "Players", admin_xuly_path(:option => 1), :method=> :post, :remote => true %></li>
+            <li><%= link_to "Football Clubs", admin_xuly_path(:option => 2), :method=> :post, :remote => true %></li>
+            <li><%= link_to "Footbal Asisstants", admin_xuly_path(:option => 3), :method=> :post, :remote => true %></li>
+            <li><%= link_to "Stadiums", admin_xuly_path(:option => 4), :method=> :post, :remote => true %></li>            
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to "Match", admin_xuly_path(:option => 5), :method=> :post, :remote => true %></li>
+            <li><%= link_to "Stat details", admin_xuly_path(:option => 6), :method=> :post, :remote => true %></li>
+            
+            <li><%= link_to "Number Round", admin_xuly_path(:option => 7), :method=> :post, :remote => true %></li>
+            <li><%= link_to "Matchdays", admin_xuly_path(:option => 8), :method=> :post, :remote => true %></li>
+            <li><%= link_to "Stats", admin_xuly_path(:option => 9), :method=> :post, :remote => true %></li>
+            
+          </ul>
+        </li>
+        <li >
+          <li><%= link_to "Users", admin_xuly_path(:option => 10), :method=> :post, :remote => true %></li>
+          
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Posts and videos <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to "Videos", admin_xuly_path(:option => 11), :method=> :post, :remote => true %></li>
+            <li><%= link_to "Posts", admin_xuly_path(:option => 12), :method=> :post, :remote => true %></li>  
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-user">
+                  <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                  </li>
+              </ul>
+              <!-- /.dropdown-user -->
+          </li>
+      </ul>
+  </div><!--/.container-fluid -->
+  </div>
+		</div>
+			<div class="panel-body" style="height:700px;overflow:auto;">
+				<% if @cauthus != nil%>
+					<%= render 'cauthus/index'%>
+				<% elsif @doibongs != nil%>
+					<%= render 'doibongs/index'%>
+				<% elsif @huanluyenviens != nil%>
+					<%= render 'huanluyenviens/index'%>
+				<% elsif @sanvandongs != nil%>
+					<%= render 'sanvandongs/index'%>
+				<% elsif @trandaus != nil%>
+					<%= render 'trandaus/index'%>
+				<% elsif @chitietbxhs != nil%>
+					<%= render 'chitietbxhs/index'%>
+				<% elsif @vongdaus != nil%>
+					<%= render 'vongdaus/index'%>
+				<% elsif @lichthidaus != nil%>
+					<%= render 'lichthidaus/index'%>
+				<% elsif @bangxephangs != nil%>
+					<%= render 'bangxephangs/index'%>
+				<% elsif @users != nil%>
+					<%= render 'users/index'%>
+				<% elsif @videos != nil%>
+					<%= render 'videos/index'%>
+				<% elsif @baiviets != nil%>
+					<%= render 'baiviets/index'%>
+				<% end %>
+			</div>
+		</div>
+</div>
+</div>

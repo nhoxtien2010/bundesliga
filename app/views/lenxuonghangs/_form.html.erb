@@ -1,0 +1,25 @@
+<%= form_for(@lenxuonghang) do |f| %>
+  <% if @lenxuonghang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lenxuonghang.errors.count, "error") %> prohibited this lenxuonghang from being saved:</h2>
+
+      <ul>
+      <% @lenxuonghang.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ten %><br>
+    <%= f.text_field :ten %>
+  </div>
+  <div class="field">
+    <%= f.label :thongtin %><br>
+    <%= f.text_field :thongtin %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

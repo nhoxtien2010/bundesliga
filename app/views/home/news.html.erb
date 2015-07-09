@@ -1,0 +1,50 @@
+   <div id="content">
+<style>
+
+</style>
+  <div id="left">
+  	<div class="panel panel-info">
+    <div class="panel-heading" style="background:url(/assets/content/td.png) no-repeat;color: #fff;font-size: 24px;padding:0px 4px 0px 4px"><b> Newsletters</b>
+    </div>
+    </div>
+    <div id="products" class="row list-group">
+    	 <%@baiviets.each do |baiviet|%>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="/assets/tintuc/<%= baiviet["hinhanh"]%>" />
+                <div class="caption">
+                    <h5 style="height: 58px;overflow:hidden;" class="group inner list-group-item-heading">
+                    <b><%= baiviet["tieude"]%> </b></h5>
+                    <p style="height: 132px;overflow:hidden;" class="group inner list-group-item-text text">
+                    	<%= baiviet["noidung"]%>
+                    </p>
+                    <div class="row">
+                       
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="<%= "/home/chitiet_baiviet/"+baiviet["id"].to_s%>"> Details..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <%end%>
+    </div>
+            <div class="row" style="text-align: center">
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li class="disabled"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
+
+</div>
+ <div id="right">	
+<%=render "home/right" %>
+ 	</div>
+</div>
+
+<div style="clear:both"></div>

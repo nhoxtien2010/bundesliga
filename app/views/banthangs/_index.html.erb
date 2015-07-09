@@ -1,0 +1,29 @@
+<h1>Listing banthangs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Thoigian</th>
+      <th>Cauthu</th>
+      <th>Chitiettrandau</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @banthangs.each do |banthang| %>
+      <tr>
+        <td><%= banthang.thoigian %></td>
+        <td><%= banthang.cauthu %></td>
+        <td><%= banthang.chitiettrandau %></td>
+        <td><%= link_to 'Show', banthang %></td>
+        <td><%= link_to 'Edit', edit_banthang_path(banthang) %></td>
+        <td><%= link_to 'Destroy', banthang, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Banthang', new_banthang_path %>

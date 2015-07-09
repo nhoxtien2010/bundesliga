@@ -1,0 +1,74 @@
+<div class="col-md-10">
+  <%if @cauthu_timkiem != nil%>	 
+	  <%@cauthu_timkiem.each do |ct|%>	  	
+		  <img alt='<%= ct.ten%>' height='30' src='<%= '/assets/cauthus/'+ ct.hinhanh %>' width='30'>		  
+  		<center >
+			  <a style="margin-top:10px;color: black " data-toggle="modal" data-target="#myModal<%= ct.id%>"+"right" ><%= ct.ten%></a>
+			</center>
+			  <!-- Modal -->
+		  
+			<div class="modal fade" id="myModal<%= ct.id%>"+"right" role="dialog">
+				<div class="modal-dialog">
+				
+				  <!-- Modal content-->
+				  <div class="modal-content">
+				    <div class="modal-header">
+				      <button type="button" class="close" data-dismiss="modal">&times;</button>
+				      <h4 class="modal-title"><center><%= ct.ten%></center></h4>
+				    </div>
+				    <div class="modal-body">
+				    	<div class="row text-center">
+							<img alt=<%= ct.ten%> src=<%= "/assets/cauthus/"+ ct.hinhanh %> width = "300" height = "400" >
+						</div>
+						<div class="row">
+							<div class="col-md-10 col-md-offset-1">
+								<div class="table-responsive">          
+								  <table class="table">
+								    <thead>
+								      <tr>
+								        <th>Info</th>
+								        <th>Data</th>
+								      </tr>
+								    </thead>
+								    <tbody>
+								      <tr>
+								        <td>Country</td>
+								        <td><%= ct.quoctich%></td>
+								      </tr>
+								      <tr>
+								        <td>Date of birth</td>
+								        <td><%= ct.ngaysinh%></td>
+								      </tr>
+								      <tr>
+								        <td>Football club</td>
+								        <td><%= Doibong.find(ct.doibong_id).ten%></td>
+								      </tr>
+								      <tr>
+								        <td>Height</td>
+								        <td><%= ct.chieucao%></td>
+								      </tr>
+								      <tr>
+								        <td>Weight</td>
+								        <td><%= ct.cannang%></td>
+								      </tr>
+								      <tr>
+								        <td>Position</td>
+								        <td><%= Vitri.find(ct.vitri_id).tenvitri%></td>
+								      </tr>
+								    </tbody>
+								  </table>
+								  </div>
+							  </div>
+						</div>
+						     
+				   </div>
+				    <div class="modal-footer">
+				      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				    </div>
+				  </div>
+				  
+				</div>
+			</div>  		
+	  <%end%>
+  <%end%>
+</div>

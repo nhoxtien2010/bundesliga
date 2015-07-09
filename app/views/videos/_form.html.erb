@@ -1,0 +1,64 @@
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+
+
+		<%= form_for(@video) do |f| %>
+		  <% if @video.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
+		
+		      <ul>
+		      <% @video.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		
+		  <div class="field">
+		    <%= f.label :tieude,"Title"%><br>
+		    <%= f.text_field :tieude , :class=>"form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :nguon, "Club id" %><br>
+		    <%= f.text_field :nguon , :class=>"form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :tuade, "Note image" %><br>
+		    <%= f.text_field :tuade, :class=>"form-control" %>
+		  </div>
+		  <div class="field">
+
+	      <%= f.label :video, "Video Source"%><br />
+	      <div class="input-group">
+				  <span class="input-group-addon btn btn-info btn-file" id="basic-addon1">Browser...<input type="file"></span>
+				  <input type="text" class="form-control" placeholder="File name" aria-describedby="basic-addon1" id= "video_video" name = "video[video]" value = <%= @video.video %>>
+				</div>
+	    </div>
+		  <div class="field">
+		    <%= f.label :noidung, "Content" %><br>
+		    <%= f.text_area :noidung , :class=>"form-control", :height=> "300px"%>
+		  </div>
+		  <div class="actions">
+		    <%= f.submit "Submit", :class=> "btn btn-success"%>
+		  </div>
+		<% end %>
+	</div>	
+</div>
+
+
+<!-- ###################script code ###################-->
+
+<script>
+
+	$('input[type=file]').change(function() {
+  
+      var filename = $('input[type=file]').val();
+      var arr = filename.split('\\');
+      // console.log(arr[arr.length-1])
+      $('#cauthu_hinhanh').val(arr[arr.length-1]);
+  });
+
+
+ 	
+</script>

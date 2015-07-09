@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stt: 
+  sotrandathidau: 
+  thoigianbatdau: 2015-05-06 08:07:05
+  thoigianketthuc: 2015-05-06 08:07:05
+
+two:
+  stt: 
+  sotrandathidau: 
+  thoigianbatdau: 2015-05-06 08:07:05
+  thoigianketthuc: 2015-05-06 08:07:05

@@ -1,0 +1,45 @@
+<h1 class="text-center">Listing Stat Details</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Rate Number</th>
+      <th>Number of match played</th>
+      <th>Point</th>
+      <th>Sum of lost goal:</th>
+      <th>Sum of goal:</th>
+      <th>Number of Win:</th>
+      <th>Number of Draw:</th>
+      <th>Number of lost:</th>
+      <th>Stat:</th>
+      <th>Club:</th>
+      <th>Rating:</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chitietbxhs.each do |chitietbxh| %>
+      <tr>
+        <td><%= chitietbxh.thuhang %></td>
+        <td><%= chitietbxh.sotranthidau %></td>
+        <td><%= chitietbxh.diem %></td>
+        <td><%= chitietbxh.tongsobanthua %></td>
+        <td><%= chitietbxh.tongsobanthang %></td>
+        <td><%= chitietbxh.sotranthang %></td>
+        <td><%= chitietbxh.sotranghoa %></td>
+        <td><%= chitietbxh.sotrangthua %></td>
+        <td><%= Vongdau.find(Bangxephang.find(chitietbxh.bangxephang).vongdau).stt %></td>
+        <td><%= Doibong.find(chitietbxh.doibong ).ten%></td>
+        <td><%= Lenxuonghang.find(chitietbxh.lenxuonghang).ten %></td>
+        <td><%= link_to 'Show', chitietbxh %></td>
+        <td><%= link_to 'Edit', edit_chitietbxh_path(chitietbxh) %></td>
+        <td><%= link_to 'Destroy', chitietbxh, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stat Details', new_chitietbxh_path %>

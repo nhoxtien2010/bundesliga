@@ -1,0 +1,39 @@
+
+<div class="row">
+	<div class="col-md-offset-4 col-md-4">
+
+		<%= form_for(@vongdau) do |f| %>
+		  <% if @vongdau.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@vongdau.errors.count, "error") %> prohibited this vongdau from being saved:</h2>
+		
+		      <ul>
+		      <% @vongdau.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		
+		  <div class="field">
+		    <%= f.label :stt, "Index" %><br>
+		    <%= f.text_field :stt, :class=> "form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :sotrandathidau, "Number of match played" %><br>
+		    <%= f.text_field :sotrandathidau, :class=> "form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :thoigianbatdau, "Time start" %><br>
+		    <%= f.date_select :thoigianbatdau, :class=> "form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :thoigianketthuc, "Time finish" %><br>
+		    <%= f.date_select :thoigianketthuc, :class=> "form-control" %>
+		  </div>
+		  <div class="actions">
+		    <%= f.submit "Submit", :class => "btn btn-success"%>
+		  </div>
+		<% end %>
+	</div>
+</div>

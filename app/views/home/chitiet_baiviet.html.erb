@@ -1,0 +1,77 @@
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1&appId=YOUR_APP_ID";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="content">
+	<div id="left">
+<div class="panel panel-info">
+	<div class="panel-heading" style="background:url(/assets/content/td.png) no-repeat;color: #fff;font-size: 20px;padding:4px 4px 4px 4px"><%= @baiviet.giaidau%> ||  <div style="float:right;color: #000"><%= @baiviet.created_at%></div></div>
+  <div class="panel-body">
+  	<p><b> <h2 class="list-group-item-heading"><%= @baiviet.tieude%></b></h2></p>
+  	<p><img class="img-thumbnail" src="/assets/tintuc/<%= @baiviet.hinhanh%>" /></p>
+  	<p class="block-grid-item"><%=raw sanitize(simple_format(@baiviet.noidung), :tags => %w(br p div /div) ) %></p>
+  </div>
+	</div>
+
+  <%if user_signed_in?%>
+
+  <!-- ##########################facebook comment div######################## -->
+	<div id="fb-root">
+  	<div class="panel panel-info">
+  		<div class="fb-page" data-href="https://www.facebook.com/facebook" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/thienphuc.cr/"><a href="https://www.facebook.com/thienphuc.cr/">Facebook</a></blockquote></div>
+      </div>
+    </div>
+		
+	<div class="panel panel-info">
+	<div data-href="localhost:3000/home/chitiet_tintuc/<%= @baiviet.id.to_s%>" data-numposts="5" class="fb-comments fb_iframe_widget" fb-xfbml-state="rendered">
+		<div style="height: 236px; width: 550px;">
+		<iframe id="f30f30b5e8" name="f15cdceca8" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="localhost:3000/home/chitiet_baiviet/<%= @baiviet.id.to_s%>" style="border: none; overflow: hidden; height: 236px; width: 550px;"></iframe>
+		</iframe>
+		</div>
+	</div>     
+	<!-- <div class="_4-u3 _5e8k"><a class="_42ft _4jy0 _4jy4 _4jy1 selected _51sy" role="button" href="https://developers.facebook.com/plugins/code?path=comments&amp;href=localhost%3A3000%2Fhome%2Fchitiet_tintuc&amp;width=&amp;numposts=5" rel="dialog" id="u_0_1d" tabindex="0">Get Code</a> -->
+		<!-- </div> -->
+	<!-- <a class="_42ft _4jy0 _4jy4 _4jy1 selected _51sy" role="button" href="https://developers.facebook.com/plugins/code?path=comments&amp;href=localhost%3A3000%2Fhome%2Fchitiet_tintuc&amp;width=&amp;numposts=5" rel="dialog" id="u_0_1d" tabindex="0">Get Code</a> -->
+ 	</div>
+ 	</div>
+  <% end %>
+
+  <!-- ##########################end facebook comment div######################## -->
+ 	<div class="panel panel-info">
+ 		<div class="panel-heading" style="background:url(/assets/content/td.png) no-repeat;color: #fff;font-size: 24px;padding:0px 4px 0px 4px"> <b>Related News Team</b> </div>
+ 	<div id="products" class="row list-group">
+    	 <%@baiviets.each do |baiviet|%>
+    	 <%if @baiviet.doibong_id == baiviet["doibong_id"]%>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="/assets/tintuc/<%= baiviet["hinhanh"]%>" />
+                <div class="caption">
+                    <h5 style="height: 58px;overflow:hidden;" class="group inner list-group-item-heading">
+                      <b><%= baiviet["tieude"]%> </b></h5>
+                    <p style="height: 58px;overflow:hidden;" class="group inner list-group-item-text" style="font-weight: 100">
+                    	<%= baiviet["noidung"]%>
+                    </p>
+                    <div class="row">
+                        
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success"  href="<%= "/home/chitiet_baiviet/"+baiviet["id"].to_s%>"> Details..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%end%>
+          <%end%>
+    </div>
+    </div>
+     </div>
+ 	<div id="right">
+ 		
+<%=render "home/right" %>
+ 	</div>
+</div>
+<div style="clear:both"></div>

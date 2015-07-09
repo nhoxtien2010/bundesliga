@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  soghe: 
+  diachi: MyString
+  thongtinthem: MyString
+  doibong_id: 
+
+two:
+  soghe: 
+  diachi: MyString
+  thongtinthem: MyString
+  doibong_id: 

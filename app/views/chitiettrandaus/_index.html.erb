@@ -1,0 +1,27 @@
+<h1 class="text-center">Listing Match detail</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Match</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chitiettrandaus.each do |chitiettrandau| %>
+      <tr>
+        <td>
+        	<% c= Trandau.find(chitiettrandau.trandau_id)%>
+  				<%= Doibong.find(c.doinha_id).ten.to_s+'-'+Doibong.find(c.doikhach_id).ten.to_s+'-'+Vongdau.find(c.vongdau).stt.to_s%>
+        <td><%= link_to 'Show', chitiettrandau %></td>
+        <td><%= link_to 'Edit', edit_chitiettrandau_path(chitiettrandau) %></td>
+        <td><%= link_to 'Destroy', chitiettrandau, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chitiettrandau', new_chitiettrandau_path %>

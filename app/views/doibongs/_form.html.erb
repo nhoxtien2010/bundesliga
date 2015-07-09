@@ -1,0 +1,99 @@
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+
+		<%= form_for(@doibong) do |f| %>
+		  <% if @doibong.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@doibong.errors.count, "error") %> prohibited this doibong from being saved:</h2>
+		
+		      <ul>
+		      <% @doibong.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		
+		  <div class="field">
+		    <%= f.label :ten ,"Name"%><br>
+		    <%= f.text_field :ten ,:class => "form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :diachi, "Address"%><br>
+		    <%= f.text_field :diachi,:class => "form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :dienthoai,"Phone"%><br>
+		    <%= f.text_field :dienthoai ,:class => "form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :fax ,"Fax"%><br>
+		    <%= f.text_field :fax ,:class => "form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :website, "Website" %><br>
+		    <%= f.text_field :website ,:class => "form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :facebook , "Facebook"%><br>
+		    <%= f.text_field :facebook ,:class => "form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :ngaytl, "Date of celebrate" %><br>
+		    <%= f.date_select :ngaytl, :start_year => Time.now.year - 130, :end_year => Time.now.year + 10 %>    
+		  </div>
+		  <div class="field">
+		    <%= f.label :mauao , "Club Color"%><br>
+		    <%= f.text_field :mauao ,:class => "form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :bacsy, "Doctor" %><br>
+		    <%= f.text_field :bacsy,:class => "form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :nguoidaidientruyenthong ,"Press spokerman"%><br>
+		    <%= f.text_field :nguoidaidientruyenthong ,:class => "form-control"%>
+		  </div>
+		  
+		  <div class="field">
+		   <%= f.label :huanluyenvien_id ,"Assistant"%><br>    
+			    <%= f.select(:huanluyenvien_id,[],{},{:class =>"form-control"})  do %>
+			  		<% Huanluyenvien.all.each do |c| -%>
+			    		<%= content_tag(:option, c.ten, value: c.id) %>
+			  		<% end %>	
+				<% end %>
+		  </div>
+		  
+		  <div class="field">
+
+	      <%= f.label :logo, "Logo"%><br />
+	      <div class="input-group">
+				  <span class="input-group-addon btn btn-info btn-file" id="basic-addon1">Browser...<input type="file"></span>
+				  <input type="text" class="form-control" placeholder="File name" aria-describedby="basic-addon1" id= "doibong_logo" name = "doibong[logo]" value= <%= @doibong.logo%> >
+				</div>
+	    </div>
+
+		  <div class="actions">
+		    <%= f.submit "Submit", :class=>"btn btn-success"%>
+		  </div>
+		<% end %>
+	</div>
+</div>
+
+
+<!-- ###################script code ###################-->
+
+<script>
+
+	$('input[type=file]').change(function() {
+  
+      var filename = $('input[type=file]').val();
+      var arr = filename.split('\\');
+      // console.log(arr[arr.length-1])
+      $('#doibong_logo').val(arr[arr.length-1]);
+  });
+
+
+ 	
+</script>

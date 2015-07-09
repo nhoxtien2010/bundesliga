@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ten: MyString
+  diachi: MyString
+  dienthoai: MyString
+  fax: MyString
+  website: MyString
+  facebook: MyString
+  ngaytl: 2015-05-05
+  mauao: MyString
+  bacsy: MyString
+  nguoidaidientruyenthong: MyString
+  huanluyenvien_id: 
+
+two:
+  ten: MyString
+  diachi: MyString
+  dienthoai: MyString
+  fax: MyString
+  website: MyString
+  facebook: MyString
+  ngaytl: 2015-05-05
+  mauao: MyString
+  bacsy: MyString
+  nguoidaidientruyenthong: MyString
+  huanluyenvien_id: 

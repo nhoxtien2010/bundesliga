@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+
+		<%= form_for(@huanluyenvien) do |f| %>
+		  <% if @huanluyenvien.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@huanluyenvien.errors.count, "error") %> prohibited this huanluyenvien from being saved:</h2>
+		
+		      <ul>
+		      <% @huanluyenvien.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		
+		  <div class="field">
+		    <%= f.label :ten,"Name"%><br>
+		    <%= f.text_field :ten, :class =>"form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :tuoi, "Age" %><br>
+		    <%= f.text_field :tuoi , :class =>"form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :quoctich,"Country" %><br>
+		    <%= f.text_field :quoctich , :class =>"form-control" %>
+		  </div>
+		  <div class="field">
+
+	      <%= f.label :hinhanh, "Image"%><br />
+	      <div class="input-group">
+				  <span class="input-group-addon btn btn-info btn-file" id="basic-addon1">Browser...<input type="file"></span>
+				  <input type="text" class="form-control" placeholder="File name" aria-describedby="basic-addon1" id= "huanluyenvien_hinhanh" name = "huanluyenvien[hinhanh]" value= <%= @huanluyenvien.hinhanh%> >
+				</div>
+	    </div>
+		  <div class="actions">
+		    <%= f.submit "Submit", :class=>"btn btn-success"%>
+		  </div>
+		<% end %>
+	</div>
+</div>

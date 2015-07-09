@@ -1,0 +1,35 @@
+<h1 class="text-center">Listing matches</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Goal of home club:</th>
+      <th>Goal of visiter:</th>
+      <th>Home club:</th>
+      <th>Visiter:</th>
+      <th>Time:</th>
+      <th>Number of round:</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trandaus.each do |trandau| %>
+      <tr>
+        <td><%= trandau.banthangdoinha %></td>
+        <td><%= trandau.banthangdoikhach %></td>
+        <td><%= Doibong.where(:id => trandau.doinha_id).first.ten %></td>
+        <td><%= Doibong.where(:id => trandau.doikhach_id).first.ten %></td>
+        <td><%= trandau.thoigian %></td>
+        <td><%= Vongdau.where(:id => trandau.vongdau).first.stt %></td>      
+        <td><%= link_to 'Show', trandau %></td>
+        <td><%= link_to 'Edit', edit_trandau_path(trandau) %></td>
+        <td><%= link_to 'Destroy', trandau, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Match', new_trandau_path %>

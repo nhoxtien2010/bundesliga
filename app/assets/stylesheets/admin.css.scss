@@ -1,0 +1,53 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+  .menu_admin .container-fluid ul li a
+  {
+    color:#fff;
+    font-size: 22px;
+    font-weight: 900;
+  }
+  .menu_admin .container-fluid ul li a:hover
+  {
+    color: #000;
+    background: #FFCC00;
+  }
+    .menu_admin .container-fluid ul li ul
+  {
+    background: #000;
+  }
+  .panel-body .table tr td
+  {
+    padding:0px 3px 0px 3px;
+    border-right:1px solid #dddddd;
+  }
+   // .panel-body
+  // {
+    // overflow:scroll;
+    // width: 1010px;
+    // height:500px;
+  // }
+  .panel-body .table tr th
+  {
+    padding:0px 0px 0px 10px;
+  }
+   .panel-body .table tr td .noidung
+  {
+    overflow: scroll;
+    text-overflow: ellipsis;
+    height:100px;
+  }
+   h1.h1
+  {
+    font-weight:900;
+    font-size:40px;
+    padding:0px 5px 0px 5px;
+    text-align:center;
+  }
+.btn.btn-default
+{
+  background:#990000;
+  border-color: #990000;
+  color:#fff;
+  font-size:20px;
+}

@@ -1,0 +1,31 @@
+
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<p id="notice"><%= notice %></p>
+		
+		<p>
+		  <strong>Index:</strong>
+		  <%= @vongdau.stt %>
+		</p>
+		
+		<p>
+		  <strong>Number of match played:</strong>
+		  <%= @vongdau.sotrandathidau %>
+		</p>
+		
+		<p>
+		  <strong>Time start:</strong>
+		  <%= @vongdau.thoigianbatdau %>
+		</p>
+		
+		<p>
+		  <strong>Time finish:</strong>
+		  <%= @vongdau.thoigianketthuc %>
+		</p>
+		
+		<%= link_to 'Edit', edit_vongdau_path(@vongdau) %> |
+		<%= link_to 'Back', admin_index_path %>
+	</div>
+</div>

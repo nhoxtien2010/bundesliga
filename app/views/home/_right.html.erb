@@ -1,0 +1,140 @@
+
+ <div class="block_timkiem">
+                <table  class="right_xh" >
+                	     <tr>
+                    	<td colspan="6" style="font-size:20px;height:37px; background: #990000;color: #fff"><b>CLUB RANKS</b></td>
+                    </tr>
+                    
+                	<tr height="30px" bgcolor="#000" style="color: #fff">
+                   		<td><b>LG</b></td>
+                   		<td><b>TT</b></td>
+                   		<td><b>Club</b></td>
+                   		<td><b>NB</b></h6></td>
+                   		<td><b>+/-</b></h6></td>
+                   		<td><b>Point</b></td>
+                    </tr>
+                    <%@chitietbxhs.each do |chitietbxh|%>
+                    <tr>
+                    <td style="background-color: #fff"><img alt="7" height="25" src="/assets/logo/<%= Doibong.find(chitietbxh.doibong_id).logo%>" width="25"></a></td>
+                    	<td><%= chitietbxh.thuhang%></td>
+                        <td><b><%= Doibong.find(chitietbxh.doibong_id).ten%></b></td>
+                        <td><%= chitietbxh.sotranthidau%></td>
+                        <td><%= chitietbxh.tongsobanthang - chitietbxh.tongsobanthua %></td>
+                        <td><%= chitietbxh.diem%></td>
+                      <%end%>  
+                    </tr>
+                    
+                    <tr>
+                    	<td height="30px" colspan="6" bgcolor="#000"><a href="/home/stats" style="font-size:20px;font-weight:800;color: #FFF"><b> Details... </b></a></td> 
+                    </tr>
+                </table>
+                <hr align="center" width="99%">
+                </div>
+                
+                <div class="block_danhmuc">
+                    <div class="block_danhmuc_top">
+                    	<div class="icon_dm">
+                    		<%= image_tag("content/icon_bd.png", :alt => "rss feed" ) %>
+                        </div>
+                        <div class="dm_text">
+                      		 Champions League
+                        </div>
+                    </div>
+                    <div class="block_dm_main">
+                    	<strong>
+                    		<%@championleagues.each do |championleague|%>
+                    	<div style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden "><a href="<%= "/home/chitiet_baiviet/"+championleague["id"].to_s%>"><%= championleague["tieude"]%></a></div>
+                    	<%end%>
+                        <div><a href="#">watch more ...</a></div>
+                    </strong>
+                    </div>
+                </div>
+                
+                 <div class="block_danhmuc2">
+                    <div class="block_danhmuc_top">
+                    	<div class="icon_dm">
+                    		<%= image_tag("content/icon_bd.png", :alt => "rss feed") %>
+                        </div>
+                        <div class="dm_text">
+                      		 Focus news...
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="block_dm_main">
+                    	<%@baivietmois.each do |baivietmoi|%>
+                    	<div style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden "><a href="<%= "/home/chitiet_baiviet/"+baivietmoi["id"].to_s%>" > <strong><%= baivietmoi["tieude"]%></strong></a></div>
+                    	<%end%>
+                    </div>
+                </div>
+                
+                <div class="block_timkiem">
+                    <div class="block_timkiem_top">
+                    	<div class="icon">
+                    	<%= image_tag("content/icon_bd.png", :alt => "rss feed") %>
+                        </div>
+                        <div class="tk_text">
+                        <strong>Game Advertisement</strong>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="block_timkiem_main">
+                    	<div class="qc_nd">
+                    	<a href="#"><%= image_tag("content/logo_qc1.jpg", :alt => "rss feed" , :width=>327) %><br /><b>-----PES THAT GAME FOR ALL AGES-----</b></a>
+                        </div>
+                        <div class="qc_active" align="center">
+<br /><%= image_tag("content/logo_qc2.jpg", :alt => "rss feed") %>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="block_timkiem">
+                    <div class="block_timkiem_top">
+                    	<div class="icon">
+                    	<%= image_tag("content/icon_hotrott.png", :alt => "rss feed") %>
+                        </div>
+                        <div class="tk_text">
+                       	 Logins stat
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="block_timkiem_main">
+                    	<table id="tb_hotrott">
+
+                            <tr height="25px">
+                            	<td width="25px">
+                                	<%= image_tag("content/icon_khach.gif", :alt => "rss feed") %>
+                                </td>
+                                <td>
+                                	Login on today: 0
+                                
+                                </td>
+                            </tr>
+                            <tr height="25px">
+                            	<td>
+                                	<%= image_tag("content/icon_khach.gif", :alt => "rss feed") %>
+                                </td>
+                                <td>
+                                	Login on this week: 0                                
+                                </td>
+                            </tr>
+                            <tr height="25px">
+                            	<td>
+                                	<%= image_tag("content/icon_khachthang.gif", :alt => "rss feed") %>
+                                </td>
+                                <td>
+                                	Login on this month: 0
+                                
+                                </td>
+                            </tr>
+                            <tr height="25px">
+                            	<td>
+                                	<%= image_tag("content/icon_tongkhach.gif", :alt => "rss feed") %>
+                                </td>
+                                <td>
+                                	The sum of login: 0</td>
+                            </tr>
+                           
+                        </table>
+                    </div>
+                </div>
+               <div style="clear:both"></div>

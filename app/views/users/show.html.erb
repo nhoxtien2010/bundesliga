@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<p id="notice"><%= notice %></p>
+
+		<%= image_tag @user.avatar.url(:medium) %>
+
+		<p>
+		  <strong>Email:</strong>
+		  <%= @user.email %>
+		</p>
+		
+		<p>
+		  <strong>Admin:</strong>
+		  <%= @user.admin %>
+		</p>
+		
+		<p>
+		  <strong>Firstname:</strong>
+		  <%= @user.firstname %>
+		</p>
+		
+		<p>
+		  <strong>Lastname:</strong>
+		  <%= @user.lastname %>
+		</p>
+
+		<p>
+		  <strong>Date of birth: </strong>
+		  <%= @user.ngaysinh %>
+		</p>
+		
+		<%= link_to 'Edit', edit_user_path(@user) %> |
+		<%= link_to 'Back', admin_index_path %>
+	</div>
+</div>

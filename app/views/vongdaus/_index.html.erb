@@ -1,0 +1,31 @@
+<h1 class = "text-center">Listing number of rounds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Matches which played</th>
+      <th>Start</th>
+      <th>Finish</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vongdaus.each do |vongdau| %>
+      <tr>
+        <td><%= vongdau.stt %></td>
+        <td><%= vongdau.sotrandathidau %></td>
+        <td><%= vongdau.thoigianbatdau %></td>
+        <td><%= vongdau.thoigianketthuc %></td>
+        <td><%= link_to 'Show', vongdau %></td>
+        <td><%= link_to 'Edit', edit_vongdau_path(vongdau) %></td>
+        <td><%= link_to 'Destroy', vongdau, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Round', new_vongdau_path %>

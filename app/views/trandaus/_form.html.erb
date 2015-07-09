@@ -1,0 +1,60 @@
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+
+		<%= form_for(@trandau) do |f| %>
+		  <% if @trandau.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@trandau.errors.count, "error") %> prohibited this trandau from being saved:</h2>
+		
+		      <ul>
+		      <% @trandau.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		
+		  <div class="field">
+		    <%= f.label :banthangdoinha , "Goal of home club"%><br>
+		    <%= f.text_field :banthangdoinha , :class=>"form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :banthangdoikhach,"Goal of visiter" %><br>
+		    <%= f.text_field :banthangdoikhach , :class=>"form-control" %>
+		  </div>
+			<div class="form-group">
+		    <%= f.label :doinha_id, "Home" %><br>    
+			    <%= f.select(:doinha_id,[],{},{:class =>"form-control"} ) do %>
+			  		<% Doibong.all.each do |c| -%>
+			    	<%= content_tag(:option, c.ten, value: c.id) %>
+			  	<% end %>
+				<% end %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.label :doikhach_id, "Visiter" %><br>    
+			    <%= f.select(:doikhach_id,[],{},{:class =>"form-control"} ) do %>
+			  		<% Doibong.all.each do |c| -%>
+			    	<%= content_tag(:option, c.ten, value: c.id) %>
+			  	<% end %>
+				<% end %>
+		  </div>  
+		  <div class="field">
+		    <%= f.label :thoigian, "Time" %><br>
+		    <%= f.datetime_select :thoigian , :class=>"form-control"%>
+		  </div>
+		  
+		  <div class="form-group">
+		    <%= f.label :vongdau_id, "Number of Round" %><br>    
+			    <%= f.select(:vongdau_id,[],{},{:class =>"form-control"} ) do %>
+			  		<% Vongdau.all.each do |c| -%>
+			    	<%= content_tag(:option, c.stt, value: c.id) %>
+			  	<% end %>
+				<% end %>
+		  </div>
+		  <div class="actions">
+		    <%= f.submit "Submig", :class=>"btn btn-success"%>
+		  </div>
+		<% end %>
+	</div>
+	</div>

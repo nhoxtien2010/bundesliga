@@ -1,0 +1,51 @@
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<p id="notice"><%= notice %></p>
+		
+		<p>
+		  <strong>Title</strong>
+		  <%= @baiviet.tieude %>
+		</p>
+		
+		<p>
+		  <strong>Content:</strong>
+		  <%= @baiviet.noidung %>
+		</p>
+		
+		<p>
+		  <strong>Image 1</strong>
+		  <%=image_tag "tintuc/"+ @baiviet.hinhanh, :width=>"600px", :height=>"400px" %>
+		</p>
+		
+		<p>
+		  <strong>Image 2:</strong>
+		  <%=image_tag "tintuc/"+ @baiviet.hinhanh1.to_s, :width=>"600px", :height=>"400px" %>
+		</p>
+		
+		<p>
+		  <strong>Image 3:</strong>
+		  <%=image_tag "tintuc/"+ @baiviet.hinhanh2.to_s, :width=>"600px", :height=>"400px" %>
+		</p>
+		
+		<p>
+		  <strong>Club: </strong>
+		  <%= @baiviet.doibong_id %>
+		</p>
+		
+		<p>
+		  <strong>Tournament:</strong>
+		  <%= @baiviet.giaidau %>
+		</p>
+		
+		<p>
+		  <strong>Type of Post:</strong>
+		  <%= @baiviet.loaibaiviet %>
+		</p>
+		
+		<%= link_to 'Edit', edit_baiviet_path(@baiviet) %> |
+		<%= link_to 'Back', admin_index_path %>
+		
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<%= form_for(@thephat) do |f| %>
+  <% if @thephat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@thephat.errors.count, "error") %> prohibited this thephat from being saved:</h2>
+
+      <ul>
+      <% @thephat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :loaithe %><br>
+    <%= f.text_field :loaithe %>
+  </div>
+  <div class="field">
+    <%= f.label :ghichu %><br>
+    <%= f.text_field :ghichu %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

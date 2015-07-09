@@ -1,0 +1,66 @@
+<style>
+	.well.well-sm div img
+	{
+		width:995px;
+		
+	}
+.menu_menu ul li a
+	{
+		color:#000;
+		font-size: 26px;
+	}
+.menu_menu ul li a:hover
+	{
+		color:#990000;
+	}
+	.menu_menu ul .active a
+	{
+		color:#000;
+		font-size: 26px;
+	}
+	.menu_menu ul .active a:hover
+	{
+		color:#990000;
+	}
+</style>
+<div class="panel panel-info">
+	<div class="panel-heading" style="background:url(/assets/content/td3.png) repeat;color: #fff;font-size: 20px;padding:0px 4px 0px 4px">
+		<div style="text-align: center">
+		<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" style="min-width: 230px;background: #990000" data-toggle="dropdown" aria-expanded="false"> 
+  	<div style="font-size: 15px;background: #fff;color: #000;width: 210px" >
+  	
+  		<%= @doibong.ten%> <span class="caret">  </span>
+  	</div>
+	</button>
+
+  <ul class="dropdown-menu" role="menu">
+  	<% Doibong.all.each do |doibong|%>
+    <li><a href="<%= "/home/chitietdoibong/"+doibong.id.to_s%>"><%= doibong.ten%></a></li>
+    <li class="divider"></li>
+    <%end%>	 
+  </ul>
+</div>
+</div>
+</div>
+</div>
+
+ <div  class="well well-sm" style="width: 100%;background: #990000">
+	<% if %>
+	<% @huanluyenvien.hinhanh == nil %>
+	<strong></strong>
+	<% else %>
+	 <div><%= link_to image_tag("hlv/" + @huanluyenvien.hinhanh)%></div>
+	<%end%>
+ </div>
+ <div class="menu_menu">
+ <ul class="nav nav-tabs nav-justified" style="font-size: 22px;font-weight: 900">
+  <li role="presentation" class="active"><%= link_to "News", tinmoi_doibong_path() %></li>
+  <li role="presentation"><%= link_to "Data",  dulieu_doibong_path %></li>
+  <li role="presentation"><%= link_to "Player", cauthu_doibong_path %></li>
+  <li role="presentation"><%= link_to "Match Table", ltd_doibong_path %></li>
+  <li role="presentation"><%= link_to "Stadium", sanvandong_doibong_path %></li>
+</ul>
+</div>
+
+    			

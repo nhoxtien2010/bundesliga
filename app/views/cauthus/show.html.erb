@@ -1,0 +1,47 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<p id="notice"><%= notice %></p>
+		<%= image_tag("cauthus/"+ @cauthu.hinhanh.to_s) %>	 
+		
+		<p>
+		  <strong>Name:</strong>
+		  <%= @cauthu.ten %>
+		</p>
+		
+		<p>
+		  <strong>Date of Birth</strong>
+		  <%= @cauthu.ngaysinh %>
+		</p>
+		
+		<p>
+		  <strong>Country:</strong>
+		  <%= @cauthu.quoctich %>
+		</p>
+		
+		<p>
+		  <strong>Height:</strong>
+		  <%= @cauthu.chieucao %>
+		</p>
+		
+		<p>
+		  <strong>Weight:</strong>
+		  <%= @cauthu.cannang %>
+		</p>
+		
+		<p>
+		  <strong>Position: </strong>
+		  <%= Vitri.where(:id => @cauthu.vitri).first.tenvitri %>
+		</p>
+		
+		<p>
+		  <strong>Club: </strong>
+		  <%= Doibong.where(:id =>@cauthu.doibong).first.ten %>
+		</p>
+		
+		
+		
+		<%= link_to 'Edit', edit_cauthu_path(@cauthu) %> |
+		<%= link_to 'Back', admin_index_path %>
+	</div>
+</div>

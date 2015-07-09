@@ -1,0 +1,43 @@
+
+
+
+
+<h1 class="text-center">Listing Posts</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Image</th>
+      <th>Image 1</th>
+      <th>Image 2</th>
+      <th>Club</th>
+      <th>Tourement</th>
+      <th>Type of Post</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody style="height: 100px; overflow: auto">
+    <% @baiviets.each do |baiviet| %>
+      <tr>
+        <td><%= baiviet.tieude %></td>
+        <td><div><%= baiviet.noidung %></div></td>
+        <td><%= baiviet.hinhanh %></td>
+        <td><%= baiviet.hinhanh1 %></td>
+        <td><%= baiviet.hinhanh2 %></td>
+        <td><%= baiviet.doibong_id %></td>
+        <td><%= baiviet.giaidau %></td>
+        <td><%= baiviet.loaibaiviet %></td>
+        <td><%= link_to 'Show', baiviet %></td>
+        <td><%= link_to 'Edit', edit_baiviet_path(baiviet) %></td>
+        <td><%= link_to 'Destroy', baiviet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_baiviet_path %>

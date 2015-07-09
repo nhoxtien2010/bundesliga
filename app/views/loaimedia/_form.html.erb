@@ -1,0 +1,21 @@
+<%= form_for(@loaimedium) do |f| %>
+  <% if @loaimedium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loaimedium.errors.count, "error") %> prohibited this loaimedium from being saved:</h2>
+
+      <ul>
+      <% @loaimedium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ten %><br>
+    <%= f.text_field :ten %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

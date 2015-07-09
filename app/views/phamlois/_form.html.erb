@@ -1,0 +1,33 @@
+<%= form_for(@phamloi) do |f| %>
+  <% if @phamloi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@phamloi.errors.count, "error") %> prohibited this phamloi from being saved:</h2>
+
+      <ul>
+      <% @phamloi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :thoigian %><br>
+    <%= f.text_field :thoigian %>
+  </div>
+  <div class="field">
+    <%= f.label :thephat_id %><br>
+    <%= f.text_field :thephat_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cauthu_id %><br>
+    <%= f.text_field :cauthu_id %>
+  </div>
+  <div class="field">
+    <%= f.label :chitiettrandau_id %><br>
+    <%= f.text_field :chitiettrandau_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

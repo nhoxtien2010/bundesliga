@@ -1,0 +1,101 @@
+
+<div class="row">
+	<div class= "col-md-4 col-md-offset-4">
+		<%= form_for(@baiviet) do |f| %>
+		  <% if @baiviet.errors.any? %>
+		    <div id="error_explanation">
+		      <h2 class="text-center"><%= pluralize(@baiviet.errors.count, "error") %> prohibited this baiviet from being saved:</h2>
+		
+		      <ul>
+		      <% @baiviet.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		
+		  <div class="field">
+		    <%= f.label :tieude , "Title"%><br>
+		    <%= f.text_field :tieude,:class=> "form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :noidung, "Content" %><br>
+		    <%= f.text_field :noidung ,:class=> "form-control"%>
+		  </div>
+		  <div class="field">
+
+	      <%= f.label :hinhanh, "Image 1"%><br />
+	      <div class="input-group">
+				  <span class="input-group-addon btn btn-info btn-file" id="basic-addon1">Browser...<input id = "input" type="file"></span>
+				  <input type="text" class="form-control" placeholder="File name" aria-describedby="basic-addon1" id= "baiviet_hinhanh" name = "baiviet[hinhanh]" value = <%= @baiviet.hinhanh%>>
+				</div>
+	    </div>
+
+	    <div class="field">
+
+	      <%= f.label :hinhanh1, "Image 2"%><br />
+	      <div class="input-group">
+				  <span class="input-group-addon btn btn-info btn-file" id="basic-addon1">Browser...<input id = "input1"type="file"></span>
+				  <input type="text" class="form-control" placeholder="File name" aria-describedby="basic-addon1" id= "baiviet_hinhanh1" name = "baiviet[hinhanh1]" value = <%= @baiviet.hinhanh1%>>
+				</div>
+	    </div>
+
+	    <div class="field">
+
+	      <%= f.label :hinhanh2, "Image 3"%><br />
+	      <div class="input-group">
+				  <span class="input-group-addon btn btn-info btn-file" id="basic-addon1">Browser...<input id = "input2"type="file"></span>
+				  <input type="text" class="form-control" placeholder="File name" aria-describedby="basic-addon1" id= "baiviet_hinhanh2" name = "baiviet[hinhanh2]" value = <%= @baiviet.hinhanh2%>>
+				</div>
+	    </div>
+		  <div class="field">
+		    <%= f.label :doibong_id , "Club"%><br>
+		    <%= f.text_field :doibong_id ,:class=> "form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :giaidau,"Tourement" %><br>
+		    <%= f.text_field :giaidau,:class=> "form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :loaibaiviet, "Type of Post" %><br>
+		    <%= f.text_field :loaibaiviet,:class=> "form-control" %>
+		  </div>
+		  <div class="actions">
+		    <%= f.submit "Submit", :class =>"btn btn-success"%>
+		  </div>
+		<% end %>
+	</div>
+</div>
+
+
+<!-- ###################script code ###################-->
+
+<script>
+
+	$('#input').change(function() {
+  
+      var filename = $('#input').val();
+      var arr = filename.split('\\');
+      // console.log(arr[arr.length-1])
+      $('#baiviet_hinhanh').val(arr[arr.length-1]);
+  });
+
+  $('#input1').change(function() {
+  
+      var filename = $('#input1').val();
+      var arr = filename.split('\\');
+      // console.log(arr[arr.length-1])
+      $('#baiviet_hinhanh1').val(arr[arr.length-1]);
+  });
+
+  $('#input2').change(function() {
+  
+      var filename = $('#input2').val();
+      var arr = filename.split('\\');
+      // console.log(arr[arr.length-1])
+      $('#baiviet_hinhanh2').val(arr[arr.length-1]);
+  });
+
+
+ 	
+</script>

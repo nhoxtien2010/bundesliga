@@ -1,0 +1,39 @@
+<h1 class="text-center">Listing players</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date of birth</th>
+      <th>Country</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Position</th>
+      <th>Club</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cauthus.each do |cauthu| %>
+      <tr>
+        <td><%= cauthu.ten %></td>
+        <td><%= cauthu.ngaysinh %></td>
+        <td><%= cauthu.quoctich %></td>
+        <td><%= cauthu.chieucao %></td>
+        <td><%= cauthu.cannang %></td>
+        <td><%= Vitri.where(:id => cauthu.vitri).first.tenvitri %></td>
+        <td><%= Doibong.where(:id =>cauthu.doibong).first.ten %></td>
+        <td><%= image_tag("cauthus/"+cauthu.hinhanh.to_S, :class => "round-image-50") %></td>
+        <td><%= link_to 'Show', cauthu %></td>
+        <td><%= link_to 'Edit', edit_cauthu_path(cauthu) %></td>
+        <td><%= link_to 'Destroy', cauthu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Player', new_cauthu_path %>

@@ -1,0 +1,118 @@
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+
+		<%= form_for(@sanvandong) do |f| %>
+		  <% if @sanvandong.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@sanvandong.errors.count, "error") %> prohibited this sanvandong from being saved:</h2>
+		
+		      <ul>
+		      <% @sanvandong.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		
+		  <div class="field">
+		    <%= f.label :soghe,"Capacity" %><br>
+		    <%= f.text_field :soghe, :class=>"form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :diachi,"Address" %><br>
+		    <%= f.text_field :diachi, :class=>"form-control" %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.label :doibong_id, "Club" %><br>    
+			    <%= f.select(:doibong_id,[],{},{:class =>"form-control"} ) do %>
+			  		<% Doibong.all.each do |c| -%>
+			    	<%= content_tag(:option, c.ten, value: c.id) %>
+			  	<% end %>
+				<% end %>
+		  </div>
+		  
+		  <div class="field">
+		    <%= f.label :ten ,"Name"%><br>
+		    <%= f.text_field :ten, :class=>"form-control" %>
+		  </div>
+		  <div class="field">
+
+	      <%= f.label :hinhanh, "Image 1"%><br />
+	      <div class="input-group">
+				  <span class="input-group-addon btn btn-info btn-file" id="basic-addon1">Browser...<input id = "input" type="file"></span>
+				  <input type="text" class="form-control" placeholder="File name" aria-describedby="basic-addon1" id= "sanvandong_hinhanh" name = "sanvandong[hinhanh]" value = <%= @sanvandong.hinhanh%>>
+				</div>
+	    </div>
+
+	    <div class="field">
+
+	      <%= f.label :hinhanh1, "Image 2"%><br />
+	      <div class="input-group">
+				  <span class="input-group-addon btn btn-info btn-file" id="basic-addon1">Browser...<input id = "input1"type="file"></span>
+				  <input type="text" class="form-control" placeholder="File name" aria-describedby="basic-addon1" id= "sanvandong_hinhanh1" name = "sanvandong[hinhanh1]" value = <%= @sanvandong.hinhanh1%>>
+				</div>
+	    </div>
+
+	    <div class="field">
+
+	      <%= f.label :hinhanh2, "Image 3"%><br />
+	      <div class="input-group">
+				  <span class="input-group-addon btn btn-info btn-file" id="basic-addon1">Browser...<input id = "input2"type="file"></span>
+				  <input type="text" class="form-control" placeholder="File name" aria-describedby="basic-addon1" id= "sanvandong_hinhanh2" name = "sanvandong[hinhanh2]" value = <%= @sanvandong.hinhanh2%>>
+				</div>
+	    </div>
+		  <div class="field">
+		    <%= f.label :thongtin, "Infomation" %><br>
+		    <%= f.text_field :thongtin , :class=>"form-control"%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :chitietthongtin, "Extra Infomation" %><br>
+		    <%= f.text_area :chitietthongtin, :class=>"form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :thanhlap, "Year of celebrate" %><br>
+		    <%= f.text_field :thanhlap, :class=>"form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :ve, "Sticker" %><br>
+		    <%= f.text_field :ve, :class=>"form-control" %>
+		  </div>
+		  <div class="actions">
+		    <%= f.submit "Submit", :class=>"btn btn-success" %>
+		  </div>
+		<% end %>
+	</div>
+</div>
+
+
+<!-- ###################script code ###################-->
+
+<script>
+
+	$('#input').change(function() {
+  
+      var filename = $('#input').val();
+      var arr = filename.split('\\');
+      // console.log(arr[arr.length-1])
+      $('#sanvandong_hinhanh').val(arr[arr.length-1]);
+  });
+
+  $('#input1').change(function() {
+  
+      var filename = $('#input1').val();
+      var arr = filename.split('\\');
+      // console.log(arr[arr.length-1])
+      $('#sanvandong_hinhanh1').val(arr[arr.length-1]);
+  });
+
+  $('#input2').change(function() {
+  
+      var filename = $('#input2').val();
+      var arr = filename.split('\\');
+      // console.log(arr[arr.length-1])
+      $('#sanvandong_hinhanh2').val(arr[arr.length-1]);
+  });
+
+
+ 	
+</script>

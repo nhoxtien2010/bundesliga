@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  banthangdoinha: 
+  banthangdoikhach: 
+  doinha_id: 
+  doikhach_id: 
+  thoigian: 2015-05-06 08:20:35
+  vongdau_id: 
+  sanvandong_id: 
+
+two:
+  banthangdoinha: 
+  banthangdoikhach: 
+  doinha_id: 
+  doikhach_id: 
+  thoigian: 2015-05-06 08:20:35
+  vongdau_id: 
+  sanvandong_id: 

@@ -1,0 +1,52 @@
+// Place all the styles related to the doibongs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@charset "utf-8";
+/* CSS Document */
+#content_doibong{
+  width:100%;
+  float:top;
+  margin-top:3px;
+  margin-bottom:3px;
+  padding: 10px 20px 5px 20px;
+  border:1px;
+}
+#content_doibong .menu {
+margin-left: 0px; 
+width: 100%;
+display: block;
+float: left;
+margin-bottom:7px;
+}
+.menu ul {
+width: 1024px;
+list-style: none;
+margin:0;
+float:center;
+margin-left:-29px;
+}
+
+.menu li {
+float: left;
+position: relative;
+margin-right:3px;
+}
+.menu ul li a {
+display: block;
+text-decoration: none;
+color: #000;
+background: #0099cc;
+white-space: nowrap;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+line-height: 38px;
+font-size:24px;
+font-weight:900;
+padding-bottom:5px;
+padding-top:5px;
+width:190px;
+text-align:center;
+}
+.menu ul li a:hover { 
+background: #00ff00;
+}

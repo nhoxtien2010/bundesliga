@@ -1,0 +1,45 @@
+<h1>Listing sanvandongs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Soghe</th>
+      <th>Diachi</th>
+      <th>Doibong</th>
+      <th>Hinhanh</th>
+      <th>Ten</th>
+      <th>Hinanh1</th>
+      <th>Hinhanh2</th>
+      <th>Thongtin</th>
+      <th>Chitietthongtin</th>
+      <th>Thanhlap</th>
+      <th>Ve</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sanvandongs.each do |sanvandong| %>
+      <tr>
+        <td><%= sanvandong.soghe %></td>
+        <td><%= sanvandong.diachi %></td>
+        <td><%= sanvandong.doibong_id %></td>
+        <td><%= sanvandong.hinhanh %></td>
+        <td><%= sanvandong.ten %></td>
+        <td><%= sanvandong.hinanh1 %></td>
+        <td><%= sanvandong.hinhanh2 %></td>
+        <td><%= sanvandong.thongtin %></td>
+        <td><%= sanvandong.chitietthongtin %></td>
+        <td><%= sanvandong.thanhlap %></td>
+        <td><%= sanvandong.ve %></td>
+        <td><%= link_to 'Show', sanvandong %></td>
+        <td><%= link_to 'Edit', edit_sanvandong_path(sanvandong) %></td>
+        <td><%= link_to 'Destroy', sanvandong, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sanvandong', new_sanvandong_path %>

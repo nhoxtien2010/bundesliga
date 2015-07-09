@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  thuhang: 
+  sotranthidau: 
+  diem: 
+  hieuso: 
+  tongsobanthang: 
+  sotranthang: 
+  sotranghoa: 
+  sotrangthua: 
+  bangxephang_id: 
+  doibong_id: 
+  lenxuonghang_id: 
+
+two:
+  thuhang: 
+  sotranthidau: 
+  diem: 
+  hieuso: 
+  tongsobanthang: 
+  sotranthang: 
+  sotranghoa: 
+  sotrangthua: 
+  bangxephang_id: 
+  doibong_id: 
+  lenxuonghang_id: 

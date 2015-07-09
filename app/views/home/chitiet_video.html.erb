@@ -1,0 +1,89 @@
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1&appId=YOUR_APP_ID";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="content">
+<div id="left">
+<div class="panel panel-info">
+	<div class="panel-heading" style="background:url(/assets/content/td.png) no-repeat;color: #fff;font-size: 20px;padding:4px 4px 4px 4px"><%= @video.created_at%> ||  <div style="float:right;color: #000"><%= @video.created_at%></div></div>
+  <div class="panel-body">
+  	<p><b> <h2 class="list-group-item-heading"><%= @video.tieude%></b></h2></p>
+  	<p><div class="embed-responsive embed-responsive-16by9">
+  							<iframe class="embed-responsive-item" src="/assets/videos/<%= @video.video%> "></iframe>
+								</div>
+		</p>
+  	<div style="color: red;text-align: center"><p class="block-grid-item"><%=raw sanitize(simple_format(@video.tuade), :tags => %w(br p div /div) ) %></p></div>
+  	<p class="block-grid-item"><%=raw sanitize(simple_format(@video.noidung), :tags => %w(br p div /div) ) %></p>
+  </div>
+	</div>
+	
+	<%if user_signed_in? %>
+	<!--  Binh Luan face book-->
+		<div id="fb-root">
+		 <div class="panel panel-info">
+			<div class="fb-page" data-href="https://www.facebook.com/facebook" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/thienphuc.cr/"><a href="https://www.facebook.com/thienphuc.cr/">Facebook</a></blockquote></div></div>
+			</div>
+			
+			<div class="panel panel-info">
+			<div data-href="localhost:3000/home/chitiet_video/<%= @video.id.to_s%>" data-numposts="5" class="fb-comments fb_iframe_widget" fb-xfbml-state="rendered">
+				<div style="height: 236px; width: 550px;">
+				<iframe id="f30f30b5e8" name="f15cdceca8" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="localhost:3000/home/chitiet_video/<%= @video.id.to_s%>" style="border: none; overflow: hidden; height: 236px; width: 550px;"></iframe>
+				</iframe>
+				</div>
+				</div>
+			<!-- <div class="_4-u3 _5e8k"><a class="_42ft _4jy0 _4jy4 _4jy1 selected _51sy" role="button" href="https://developers.facebook.com/plugins/code?path=comments&amp;href=localhost%3A3000%2Fhome%2Fchitiet_tintuc&amp;width=&amp;numposts=5" rel="dialog" id="u_0_1d" tabindex="0">Get Code</a> -->
+				<!-- </div> -->
+			<!-- <a class="_42ft _4jy0 _4jy4 _4jy1 selected _51sy" role="button" href="https://developers.facebook.com/plugins/code?path=comments&amp;href=localhost%3A3000%2Fhome%2Fchitiet_tintuc&amp;width=&amp;numposts=5" rel="dialog" id="u_0_1d" tabindex="0">Get Code</a> -->
+		 	</div>
+	 	</div>
+ 	<% end %>
+ 	
+ 	
+ 	<!--Het Binh Luan facebook  -->
+ 	<div class="panel panel-info">
+ 		<div class="panel-heading" style="background:url(/assets/content/td.png) no-repeat;color: #000;font-size: 24px;padding:0px 4px 0px 4px"> <b>Related News Team</b> </div>
+ 	<div id="products" class="row list-group">
+    	 <%@videos.each do |video|%>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <video class="group list-group-image" src="/assets/videos/<%= video["video"]%> "  controls="controls"></video>
+                <div class="caption">
+                    <h5 style="height: 58px;overflow:hidden;" class="group inner list-group-item-heading">
+                      <b><%= video["tieude"]%> </b></h5>
+                    <p style="height: 115px;overflow:hidden;" class="group inner list-group-item-text">
+                    	<%= video["noidung"]%>
+                    </p>
+                    <div class="row">
+                    	<div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="<%= "/home/chitiet_video/"+video["id"].to_s%>"> Details..</a>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                </p>
+                        </div>
+                        
+        </div>
+                </div>
+            </div>
+        </div>
+          <%end%>
+    </div>
+     </div>
+
+ 	
+<div style="clear:both"></div>
+</div>
+<div id="right"> 		
+    <%=render "home/right" %>
+</div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+
+<div id="content">
+<div id="content_content">
+<%=render "home/menu_chitietdb" %>	
+
+		<div class="panel panel-info">
+    <div class="panel-heading" style="background:url(/assets/content/td.png) no-repeat;color: #fff;font-size: 24px;padding:0px 4px 0px 4px"><b> Calendar Cirus</b>
+    </div>
+    </div>
+  					<table width="100%" class="ltd" >
+                	<tr align="center" style="background-color: #0099cc">
+                				<td ><h4><b>MD</b></h4></td>
+                    		<td ><h4><b>Date</b></h4></td>
+                        <td ><h4><b>Home</b></h4></td>
+                        <td style="width: 2px" bgcolor="#ccc"></td>
+                        <td ><h4><b>Away</b></h4></td>
+                        <td ><h4><b>Resuts</b></h4></td>
+                        <td ><h4><b>Details</b></h4></td>
+                   
+                    </tr>
+                    <%@trandaus.each do |trandau|%>
+		           	 <tr align="center">
+		           	 	<td><%= trandau["vongdau_id"]%></td>
+			            <td><%= trandau["thoigian"]%></td>
+			            <td><img alt="7" height="25" src="/assets/logo/<%= Doibong.find(trandau["doinha_id"]).logo%>" width="25"><%= Doibong.find(trandau["doinha_id"]).ten%></td>
+			            <td style="font-weight: 100">:</td>
+			            <td><img alt="7" height="25" src="/assets/logo/<%= Doibong.find(trandau["doikhach_id"]).logo%>" width="25"><%= Doibong.find(trandau["doikhach_id"]).ten%></td>
+			            <td><%= trandau["banthangdoinha"]%>:<%= trandau["banthangdoikhach"]%></td>
+			            
+	         		 </tr>
+	         		 <%end%>
+                </table>
+</div>
+</div>
+<hr align="center" width="99%">

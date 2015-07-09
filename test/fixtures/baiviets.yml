@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tieude: MyString
+  noidung: MyString
+  taikhoan_id: 
+
+two:
+  tieude: MyString
+  noidung: MyString
+  taikhoan_id: 

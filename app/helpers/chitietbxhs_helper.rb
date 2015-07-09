@@ -1,0 +1,2 @@
+module ChitietbxhsHelper
+end

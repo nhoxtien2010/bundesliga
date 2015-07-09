@@ -1,0 +1,70 @@
+
+<style>
+	.carousel-inner>.item> img,
+	.carousel-inner>.item>a
+	{
+		width:313px;
+		margin: auto;
+	}
+</style>
+
+<% if @cauthus != []%>
+
+<div class="row">
+	<div>
+	  <br>
+	  <div id="myCarousel" style="silver" class="carousel slide" data-ride="carousel">
+	    <!-- Indicators -->
+	    
+       <% i=1 -%>
+
+	    <ol style="margin-bottom: 35px" class="carousel-indicators">
+	      <% @cauthus.each do |cauthu|-%>
+	        <% if cauthu = @cauthus.first -%>
+	          <li data-target="#myCarousel" data-slide-to= <%= i%> class="active"></li>
+	          <% i+=1 -%>
+	        <% else-%>
+	          <li data-target="#myCarousel" data-slide-to=<%= i %>></li>
+	          <% i+=1 -%>
+	        <% end -%>
+	      <% end -%>
+	    </ol>
+	
+	    <!-- Wrapper for slides -->
+	    <div class="carousel-inner" role="listbox">
+	      <div class="item active">
+	        <%@cauthu= @cauthus.first%>
+	        <center style="font-size: 20px"><b><%= @cauthu.ten%></b></center>
+	        <img class="img-thumbnail" alt=<%= @cauthus.first.ten %> src=<%= "/assets/cauthus/"+ @cauthus.first.hinhanh %> >
+	        <%= render "home/chitietcauthu_link" %>
+		</div>
+
+
+
+	
+	      <% @cauthus.each do |cauthu|-%>
+	      	<%if cauthu != @cauthus.first-%>
+	      		<%@cauthu = cauthu%>
+	        	<div class="item">
+	        		<center style="font-size: 20px"><b><%= cauthu.ten%></b></center>
+		          	<img class="img-thumbnail" alt=<%= cauthu.ten.to_s() %> src=<%= "/assets/cauthus/"+cauthu.hinhanh.to_s()%> > 
+				  	<%= render "home/chitietcauthu_link" %>
+	        	</div>
+	      	<% end-%>
+	      <% end -%>
+	    </div>
+	
+	    <!-- Left and right controls -->
+	    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+	      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	      <span class="sr-only">Previous</span>
+	    </a>
+	    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	      <span class="sr-only">Next</span>
+	    </a>
+	  </div>
+	</div>
+</div>
+
+<% end %>

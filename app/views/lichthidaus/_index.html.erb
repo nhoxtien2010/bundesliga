@@ -1,0 +1,27 @@
+<h1 class="text-center">Listing matchday</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Year of Tourement</th>
+      <th>Number of Round:</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lichthidaus.each do |lichthidau| %>
+      <tr>
+        <td><%= lichthidau.muagiai %></td>
+        <td><%= Vongdau.where(:id=>lichthidau.vongdau).first.stt %></td>
+        <td><%= link_to 'Show', lichthidau %></td>
+        <td><%= link_to 'Edit', edit_lichthidau_path(lichthidau) %></td>
+        <td><%= link_to 'Destroy', lichthidau, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Matchday', new_lichthidau_path %>

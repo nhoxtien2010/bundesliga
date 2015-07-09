@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bundesliga.com</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<style>
+.menu_tren ul li a
+{
+	background:url(/assets/content/bt_menu.png) repeat;
+	padding: 10px 5px 10px 5px;
+	font-size: 24px;
+	font-weight: 800;
+	margin-top:16px;
+	width: 170px;
+}
+.menu_tren .btn
+{
+	border:0px;
+	color:#fff;
+}
+.navbar-default .menu_tren .navbar-nav li a {
+	color:#fff;
+}
+.navbar-default .menu_tren .navbar-nav li a:hover {
+	color:#ffcc00;
+}
+</style>
+<body>
+	<!-- <p class="notice" style="margin-bottom: -3px"><%= notice %></p> -->
+	<p class="alert" style="margin-bottom: -10px"><%= alert %></p>
+	
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" rel="home" href="/home/index" title="Buy Sell Rent Everyting">
+        <img style="max-width:230px; margin-top: px;"
+             src="/assets/logo.png">
+	    </a>     
+    </div>
+    
+        
+    <div style="min-height: 112px" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	<ul class="nav navbar-nav">
+	    	<div class="menu_tren" style="padding-right: 150px;">
+		      <ul class="nav navbar-nav">
+		        <li><%=  link_to "NEWS", news_path,:class=>"btn btn-primary btn-lg" %> </li>
+		        <li><%= link_to 'PLAYERS', players_path,:class=>"btn btn-primary btn-lg" %></li>
+		        <li><%= link_to "1", watch_path,:class=>"btn btn-primary btn-lg" %></li>
+		        <li><%= link_to "STATS", stats_path,:class=>"btn btn-primary btn-lg"%></li>
+		        <li><%= link_to "ABOUT", about_path,:class=>"btn btn-primary btn-lg"%></li>        
+		      </ul>
+	      </div>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	<% if user_signed_in? %>
+    			<%= image_tag(current_user.avatar.url(:medium), :class => "round-image-50",:height=>"80px") %> 
+    			<p style = "color: black"><%= "#{current_user.firstname}" + " "+"#{current_user.lastname}"%></p>
+    		<% end %>
+      	<li>
+      		<div class="dropdown">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					     <span class="glyphicon glyphicon-user"> </span>User
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					  	
+					    <% if user_signed_in? %>
+							  <li>								  
+							  	<%= link_to destroy_user_session_path, :method => :delete do %>
+							  		<i class="glyphicon glyphicon-log-out">Log out</i>
+							  	<% end %>        
+							  </li>
+							  <li>
+							  	<%= link_to edit_user_registration_path do %>
+							  		<i class="glyphicon glyphicon-cog">Setting</i>
+							  	<% end %>
+							  </li>							  
+							  <% if current_user.admin %>
+							  	<li>
+						  			<%= link_to admin_index_path do %>
+							  			<i class = "glyphicon glyphicon-wrench">Admin</i>
+							  		<% end %>
+							  	</li>
+							  <% end %>
+							<% else %>
+							  <li>
+							  	<%= link_to new_user_session_path do %>
+							  		<i class="glyphicon glyphicon-log-in">Login</i>
+							  	<% end %>  
+							  </li>
+							  <li>
+							  	<%= link_to new_user_registration_path do %>
+							  		<i class="glyphicon glyphicon-asterisk">Register</i>
+							  	<% end %>
+							  </li>
+							<% end %>
+					  </ul>
+					</div>
+      	</li>
+      </ul>
+      
+
+      	
+      	
+    	</div>
+       
+         	
+        
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<%=render "home/menu_doibong" %>
+
+<% if notice %>
+	<p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+<div class="container">
+	<%= yield %>
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted text-center" style="font-size: 24px;color: #000">Designed by Thanh Tien & Thien Phuc</p>
+  </div>
+</footer>
+
+</body>
+</html>

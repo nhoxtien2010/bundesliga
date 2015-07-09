@@ -1,0 +1,180 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ * 
+ * 
+ *= require_tree .
+ *= require_self
+ */
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  width: 100 px;
+  font-size:20px;
+  font-weight:900;
+  font-family: Garamond, Georgia, Times, "Times New Roman", serif;
+  color:#fff;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+    background:url(../assets/logo/Capture.png) no-repeat ;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+margin-bottom: 61px;
+font-family: Garamond, Georgia, Times, "Times New Roman", serif;
+font-size:18px;
+padding:0px;
+color:black;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  right:0px;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color:whitesmoke;
+   background:url(../assets/logo/footer.png) repeat-x ;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 0px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0; 
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+    color: #FF0000;
+}
+
+#thumbs-wrapper {
+  //  background: #000;
+    //text-align: center;
+  width: 1080px;
+    height: 51px;
+    overflow: hidden;
+ //   margin-left: 300px auto
+}
+#thumbs-container {
+    overflow: hidden
+}
+#thumbs-container img {
+    margin: 0;
+    padding: 0;
+    border: none;
+    float: left;
+    padding: 0 1px
+}
+tbody tr td
+{
+  padding-right:5px;
+}
+thead tr th
+{
+  padding-right:5px;
+}
+
+p, ol, ul, td {
+  font-family: Garamond, Georgia, Times, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 15px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 18px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 18px;
+    list-style: square;
+  }
+}
+
+
+.round-image-50 {
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  text-align: center;
+  img { width: 100% }
+}
+
+
+
+

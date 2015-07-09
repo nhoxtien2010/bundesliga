@@ -1,0 +1,35 @@
+		
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		
+		<p id="notice"><%= notice %></p>
+		<p>
+
+		<video class="group list-group-image" src="/assets/videos/<%= @video["video"]%> "  controls="controls"></video>
+		</p>
+		
+		<p>
+		  <strong>Title:</strong>
+		  <%= @video.tieude %>
+		</p>
+		
+		<p>
+		  <strong>Club id:</strong>
+		  <%= @video.nguon %>
+		</p>
+		
+		<p>
+		  <strong>Note of image:</strong>
+		  <%= @video.tuade %>
+		</p>
+		<p>
+		  <strong>Content:</strong>
+		  <%= @video.noidung %>
+		</p>
+		
+		<%= link_to 'Edit', edit_video_path(@video) %> |
+		<%= link_to 'Back', admin_index_path %>
+
+
+	</div>
+</div>

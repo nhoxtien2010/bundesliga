@@ -1,0 +1,84 @@
+<div class="row">
+	<div class= "col-md-4 col-md-offset-4">
+		<%= form_for(@cauthu) do |f| %>
+		  <% if @cauthu.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@cauthu.errors.count, "error") %> prohibited this cauthu from being saved:</h2>
+		
+		      <ul>
+		      <% @cauthu.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		
+		  <div class="field">
+		    <%= f.label :ten,"Name" %><br>
+		    <%= f.text_field :ten, :class=>"form-control" %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :ngaysinh, "Date of birth" %><br>
+		    <%= f.date_select :ngaysinh,:class=>"form-control" ,:start_year=>1900 %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :quoctich, "Country"%><br>
+		    <%= f.text_field :quoctich, :class=>"form-control"  %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :chieucao,"Height"%><br>
+		    <%= f.text_field :chieucao, :class=>"form-control"  %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :cannang,"Weight" %><br>
+		    <%= f.text_field :cannang , :class=>"form-control" %>
+		  </div>
+		  <div class="form-group">
+		   <%= f.label :vitri_id, "Position"%><br>    
+			    <%= f.select(:vitri_id,[],{},{:class =>"form-control"}) do %>
+			  		<% Vitri.all.each do |c| -%>
+			    	<%= content_tag(:option, c.tenvitri, value: c.id) %>
+			  	<% end %>
+				<% end %>
+		  </div>
+
+		  <div class="form-group">
+		    <%= f.label :doibong_id, "Club" %><br>    
+			    <%= f.select(:doibong_id,[],{},{:class =>"form-control"} ) do %>
+			  		<% Doibong.all.each do |c| -%>
+			    	<%= content_tag(:option, c.ten, value: c.id) %>
+			  	<% end %>
+				<% end %>
+		  </div>
+		  <div class="field">
+
+	      <%= f.label :hinhanh, "Image"%><br />
+	      <div class="input-group">
+				  <span class="input-group-addon btn btn-info btn-file" id="basic-addon1">Browser...<input type="file"></span>
+				  <input type="text" class="form-control" placeholder="File name" aria-describedby="basic-addon1" id= "cauthu_hinhanh" name = "cauthu[hinhanh]" value = <%= @cauthu.hinhanh%>>
+				</div>
+	    </div>
+		  <div class="actions">
+		    <%= f.submit "Submit", :class =>"btn btn-success"%>
+		  </div>
+		<% end %>
+
+	</div>
+</div>
+
+
+<!-- ###################script code ###################-->
+
+<script>
+
+	$('input[type=file]').change(function() {
+  
+      var filename = $('input[type=file]').val();
+      var arr = filename.split('\\');
+      // console.log(arr[arr.length-1])
+      $('#cauthu_hinhanh').val(arr[arr.length-1]);
+  });
+
+
+ 	
+</script>

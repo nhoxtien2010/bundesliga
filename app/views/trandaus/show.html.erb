@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<p id="notice"><%= notice %></p>
+		
+		<p>
+		  <strong>Goal of home club:</strong>
+		  <%= @trandau.banthangdoinha %>
+		</p>
+		
+		<p>
+		  <strong>Goal of visiter:</strong>
+		  <%= @trandau.banthangdoikhach %>
+		</p>
+		
+		<p>
+		  <strong>Home club:</strong>
+		  <%= Doibong.where( :id => @trandau.doinha_id).first.ten %>
+		</p>
+		
+		<p>
+		  <strong>Visiter:</strong>
+		  <%= Doibong.where( :id => @trandau.doikhach_id).first.ten %>
+		</p>
+		
+		<p>
+		  <strong>Time:</strong>
+		  <%= @trandau.thoigian %>
+		</p>
+		
+		<p>
+		  <strong>Number of round:</strong>
+		  <%= Vongdau.where(:id => @trandau.vongdau).first.stt %>
+		</p>
+		
+		
+		<%= link_to 'Edit', edit_trandau_path(@trandau) %> |
+		<%= link_to 'Back', admin_index_path %>
+	</div>
+</div>

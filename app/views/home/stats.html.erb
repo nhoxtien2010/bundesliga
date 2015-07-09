@@ -1,0 +1,88 @@
+   <div id="content">
+  <div id="left">	
+<div class="panel-heading" style="background:url(/assets/content/td.png) no-repeat;color: #fff;font-size: 24px;padding:0px 4px 2px 4px"><b>Number Round</b>
+    </div>
+  		 <table class="vongdau" border="1" width="100%" align="center">
+         <tr align="center" style="font-weight:900;color:#fff">
+         	<%@vongdaus.each do |vongdau|%>
+         		<%if vongdau.stt.to_i() <= 17%>
+        			<td><%= link_to vongdau.stt, change_stat_path(:stt=> vongdau.id), :method=> :post, :remote => true %></td>       			
+        		<%end%>
+        	<%end%>
+      	</tr> 
+      	
+      	<tr align="center" style="font-weight:900">
+         	<%@vongdaus.each do |vongdau|%>
+         		<%if vongdau.stt.to_i() > 17%>
+        			<td><%= link_to vongdau.stt, change_stat_path(:stt=> vongdau.id), :method=> :post, :remote => true %></td>        			
+        		<%end%>
+        	<%end%>
+      	</tr>           
+       </table>
+       <br />
+       <div class="panel-heading" style="background:url(/assets/content/td.png) no-repeat;color: #fff;font-size: 24px;padding:0px 4px 2px 4px"><b> Calendar Cirus</b>
+    	</div>
+			<table width="100%" class="ltd" >
+        	<tr align="center" style="background-color: #000;color: #fff">
+            	<td ><h4><b>Time</b></h4></td>
+                <td ><h4><b>Home</b></h4></td>
+                <td ><h4><b>Visiter</b></h4></td>
+                 <td>Detail</td>
+           
+            </tr>
+            <%@trandaus.each do |trandau|%>
+           	 <tr align="center">
+	            <td><%= trandau.thoigian%></td>
+	            <td><img alt="7" height="25" src="/assets/logo/<%= Doibong.find(trandau.doinha_id).logo%>" width="25"><%= Doibong.find(trandau.doinha_id).ten%></td>
+	            <td><img alt="7" height="25" src="/assets/logo/<%= Doibong.find(trandau.doikhach_id).logo%>" width="25"><%= Doibong.find(trandau.doikhach_id).ten%></td>
+	            <% @current_trandau = trandau%>
+	            <td><%=render "home/trandau_link"%></td>
+     			 </tr>
+     		 <%end%>
+        </table>
+             
+                
+                
+    <!-- =========== Bang xep hang ==================== -->
+  	 <div class="panel-heading" style="background:url(/assets/content/td.png) no-repeat;color: #fff;font-size: 24px;padding:0px 4px 2px 4px"><b> Club Ranks</b>
+    </div>
+	  	<table class="bxh" width="100%" align="center" >
+	  		<tr align="center" style="background-color: #000;color: #fff">
+	            <td>Rate</td>
+	            <td>Club</td>
+	            <td>Num match played</td>
+	            <td>W*</td>
+	            <td>D*</td>
+	            <td>L*</td>
+	            <td>G*</td>
+	            <td>GD*</td>
+	            <td>PTS*</td>
+	            <td>LXH</td>
+	           
+	          </tr>
+				<%@chitietbxhs.each do |chitietbxh|%>
+	         <tr align="center">
+	            <td><%= chitietbxh.thuhang%></td>
+	            <td><img  alt="7" height="25" src="/assets/logo/<%= Doibong.find(chitietbxh.doibong_id).logo%>" width="25"><%= Doibong.find(chitietbxh.doibong_id).ten%></Câu></td>
+	            <td><%= chitietbxh.sotranthidau%></td>
+	            <td><%= chitietbxh.sotranthang%></td>
+	            <td><%= chitietbxh.sotranghoa%></td>
+	            <td><%= chitietbxh.sotrangthua%></td>
+	            <td><%= chitietbxh.tongsobanthang%></td>
+	            <td><%= chitietbxh.tongsobanthang.to_s+"-"+chitietbxh.tongsobanthua.to_s%></td>
+	            <td><%= chitietbxh.diem%></td>
+	            <td><%= Lenxuonghang.find(chitietbxh.lenxuonghang_id).ten%></td>
+	            
+	          </tr>
+	      <%end%>
+	          
+	   </table>					
+        
+        
+		</div>
+  	
+ <div id="right">	
+<%=render "home/right" %>
+ 	</div>
+    </div>
+<div style="clear:both"></div>

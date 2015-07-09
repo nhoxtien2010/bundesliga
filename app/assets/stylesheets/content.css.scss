@@ -1,0 +1,57 @@
+#content{
+	width:1024px;
+	margin-top:10px;
+	//background:url(../assets/logo/cont_main.png) repeat-y;
+	margin:auto;
+	position:static;
+	padding-bottom:5px;
+	font-family: Garamond, Georgia, Times, "Times New Roman", serif;
+	
+}
+#content_content
+{
+  width:100%;
+  padding: 10px 5px 5px 5px;
+//background: rgba(0,120,150,0.1);
+-webkit-box-shadow: 3px 3px 7px red;
+-moz-box-shadow: 3px 3px 7px red;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+//border: 1px solid black;
+min-height:600px;
+font-family: Garamond, Georgia, Times, "Times New Roman", serif;
+}
+#left{
+width:69%;
+float:left;
+margin: 2px 0 10px 0; 
+padding: 10px 20px 5px 20px;
+//background: rgba(0,120,150,0.1);
+-webkit-box-shadow: 3px 3px 7px red;
+-moz-box-shadow: 3px 3px 7px red;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+//border: 1px solid black;
+min-height:600px;
+font-family: Garamond, Georgia, Times, "Times New Roman", serif;
+}
+#right{
+width:30%;
+float:right;
+/*background: rgba(0,120,150,0.6);*/
+//background: rgba(0,120,150,0.7);
+//-webkit-box-shadow: 3px 3px 7px #777;
+//-moz-box-shadow: 3px 3px 7px #777;
+//-moz-border-radius: 10px;
+//-webkit-border-radius: 10px;
+//border: 1px solid black;
+
+min-height:600px;
+position:relative;
+margin-left:10px;
+color:#000;
+}
+
+
+
+

@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content_noibat{
+	width:100%;
+	float:center;
+	margin-top:3px;
+	margin-bottom:3px;
+}
+.table_nb{
+	text-align:left;
+	}
+.table_nb a{
+	color:#000;
+}
+table .tuade{
+  padding-top:7px;
+  padding-left:6px;
+}
+.tuade a p{
+	color:#fff;
+	font-size:25px;
+	font-family: Garamond, Georgia, Times, "Times New Roman", serif;
+}
+.tuade{
+width:auto;
+height:32px;
+background:url(/assets/content/td.png) no-repeat;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+}
+.vongdau
+{
+border-collapse: separate;
+border-spacing: 1px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+}
+.vongdau tr td
+{
+ background:#990000;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+}
+.vongdau a{
+  color:#fff;
+} 
+.vongdau a:hover{
+	color:#ffcc00;
+	background:#990000;
+} 
+.table_tlq{
+	color:#30F;
+	font-size:14px;
+	font-weight:600;
+}
+.table_about{
+	color:#000;
+	border-collapse: separate;
+	border-spacing: 3px;
+	border:1px;
+}
+.table_about a{
+	color:#000;
+}
+.doibong a{
+	color:#000;
+	margin-top:30px;
+}
+.doibong a:hover{
+	color:#F00;
+	font-weight:800;
+}
+.table_player
+{
+ border-spacing: 1px;
+border-collapse: separate;
+//border-color: #ccc;
+tr:nth-child(odd) {background:grey}
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+}
+.table_player tr td
+{
+  text-align: center;
+  -moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+}
+.bxh
+{
+border-spacing: 2px;
+border-collapse: separate;
+border-color: #cff;
+//background-color: #ccc;
+font-weight:900;
+tr:nth-child(odd) {background:#eeeeee}
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+}
+.bxh tr td
+{
+ padding:7px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+}
+.ltd
+{
+border-spacing: 2px;
+tr:nth-child(odd) {background:#eeeeee}
+border-collapse: separate;
+border-color: #cff;
+//background-color: #ccc;
+font-weight:900;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+}
+.ltd tr td
+{
+  padding:10px;
+  -moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+}
+.dulieu_doibong
+{
+  border-spacing: 3px;
+  border-color: #cff;
+  border-collapse: separate;
+}
+.dulieu_doibong tr td
+{
+  
+  padding:10px;
+}
+

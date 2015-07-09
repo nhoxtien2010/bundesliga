@@ -1,0 +1,47 @@
+<h1 class="text-center">Listing Club</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name:</th>
+      <th>Address:</th>
+      <th>Phone:</th>
+      <th>Fax</th>
+      <th>Website</th>
+      <th>Facebook</th>
+      <th>Date of celebrate:</th>
+      <th>Club color:</th>
+      <th>Doctor:</th>
+      <th>Press spokerman:</th>
+      <th>Logo:</th>
+      <th>Assistant:</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doibongs.each do |doibong| %>
+      <tr>
+        <td><%= doibong.ten %></td>
+        <td><div><%= doibong.diachi %></div></td>
+        <td><%= doibong.dienthoai %></td>
+        <td><%= doibong.fax %></td>
+        <td><%= doibong.website %></td>
+        <td><%= doibong.facebook %></td>
+        <td><%= doibong.ngaytl %></td>
+        <td><%= doibong.mauao %></td>
+        <td><div><%= doibong.bacsy %></div></td>
+        <td><%= doibong.nguoidaidientruyenthong %></td>
+        <td><img src="<%= "/assets/logo/"+doibong.logo.to_s%>", class ="round-image-50"></td>
+        <td><%= Huanluyenvien.find(doibong.huanluyenvien).ten %></td>
+        <td><%= link_to 'Show', doibong %></td>
+        <td><%= link_to 'Edit', edit_doibong_path(doibong) %></td>
+        <td><%= link_to 'Destroy', doibong, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Club', new_doibong_path %>

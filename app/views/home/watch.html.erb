@@ -1,0 +1,56 @@
+<div id="content">
+  	<script type="text/javascript">
+    $(document).ready(function() {
+    $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+    $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+});
+  </script>
+  <div id="left">
+    <div class="panel panel-info">
+ 		<div class="panel-heading" style="background:url(/assets/content/td.png) no-repeat;color: #fff;font-size: 24px;padding:0px 4px 0px 4px"> <b>New Videos</b> </div>
+ 	<div id="products" class="row list-group">
+    	 <%@videos.each do |video|%>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <video class="group list-group-image" src="/assets/videos/<%= video["video"]%> "  controls="controls"></video>
+                <div class="caption">
+                    <h5 style="height: 40px;overflow:hidden;" class="group inner list-group-item-heading">
+                      <b><%= video["tieude"]%> </b></h5>
+                    <p style="height: 115px;overflow:hidden;" class="group inner list-group-item-text">
+                    	<%= video["noidung"]%>
+                    </p>
+                    <div class="row">
+                    	<div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="<%= "/home/chitiet_video/"+video["id"].to_s%>"> Details..</a>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+          <%end%>
+    </div>
+     </div>
+            <div class="row" style="text-align: center">
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li class="disabled"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
+
+</div>
+ <div id="right">	
+<%=render "home/right" %>
+ 	</div>
+</div>
+
+<div style="clear:both"></div>

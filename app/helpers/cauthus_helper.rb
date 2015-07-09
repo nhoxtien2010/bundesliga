@@ -1,0 +1,2 @@
+module CauthusHelper
+end

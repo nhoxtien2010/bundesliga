@@ -1,0 +1,2 @@
+module VitrisHelper
+end

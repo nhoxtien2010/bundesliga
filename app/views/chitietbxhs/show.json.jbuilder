@@ -1,0 +1,1 @@
+json.extract! @chitietbxh, :id, :thuhang, :sotranthidau, :diem, :hieuso, :tongsobanthang, :sotranthang, :sotranghoa, :sotrangthua, :bangxephang_id, :doibong_id, :lenxuonghang_id, :created_at, :updated_at

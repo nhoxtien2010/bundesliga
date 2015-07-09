@@ -1,0 +1,82 @@
+
+<% cauthu_tieubieu = @cauthus.limit(12)-%>
+
+<div>
+  <center style="font-size: 18px">Quick Players</center>
+  <ul class="list-group" id = "list_cauthu_doibong">
+  	<% if cauthu_tieubieu != [] %>
+	  	<%(0..11).each do |i|-%>	  	
+		    	<li class="list-group-item text-left" data-toggle="modal" data-target= "#myModal<%= cauthu_tieubieu[i].id%>"+"left">
+		    		<%= cauthu_tieubieu[i].ten%> 
+	    		</li>
+		    				  <!-- Modal -->
+				  <%@cauthu = cauthu_tieubieu[i]%> 
+					<div class="modal fade" id="myModal<%= @cauthu.id%>"+"left" role="dialog">
+						<div class="modal-dialog">
+						
+						  <!-- Modal content-->
+						  <div class="modal-content">
+						    <div class="modal-header">
+						      <button type="button" class="close" data-dismiss="modal">&times;</button>
+						      <h4 class="modal-title"><center><%= @cauthu.ten%></center></h4>
+						    </div>
+						    <div class="modal-body">
+						    	<div class="row text-center">
+									<img alt=<%= @cauthu.ten%> src=<%= "/assets/cauthus/"+ @cauthu.hinhanh %> width = "300" height = "400" >
+								</div>
+								<div class="row">
+									<div class="col-md-10 col-md-offset-1">
+										<div class="table-responsive">          
+										  <table class="table">
+										    <thead>
+										      <tr>
+										        <th>Data</th>
+										        <th>Info</th>
+										      </tr>
+										    </thead>
+										    <tbody>
+										      <tr>
+										        <td>Country</td>
+										        <td><%= @cauthu.quoctich%></td>
+										      </tr>
+										      <tr>
+										        <td>Date of birth</td>
+										        <td><%= @cauthu.ngaysinh%></td>
+										      </tr>
+										      <tr>
+										        <td>Club</td>
+										        <td><%= Doibong.find(@cauthu.doibong_id).ten%></td>
+										      </tr>
+										      <tr>
+										        <td>Height</td>
+										        <td><%= @cauthu.chieucao%></td>
+										      </tr>
+										      <tr>
+										        <td>Weight</td>
+										        <td><%= @cauthu.cannang%></td>
+										      </tr>
+										      <tr>
+										        <td>Position</td>
+										        <td><%= Vitri.find(@cauthu.vitri_id).tenvitri%></td>
+										      </tr>
+										    </tbody>
+										  </table>
+										  </div>
+									  </div>
+								</div>
+								     
+						   </div>
+						    <div class="modal-footer">
+						      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						    </div>
+						  </div>
+						  
+						</div>
+					</div> 
+		    	</li>	    
+		<% end -%>
+	<% end %>
+  </ul>
+</div>
+
+

@@ -1,0 +1,66 @@
+<!-- Trigger the modal with a button -->
+  <!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog">
+	
+	  <!-- Modal content-->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <button type="button" class="close" data-dismiss="modal">&times;</button>
+	      <h4 class="modal-title"><center><%= @cauthu.ten%></center></h4>
+	    </div>
+	    <div class="modal-body">
+	    	<div class="row text-center">
+				<img alt=<%= @cauthu.ten%> src=<%= "/assets/cauthus/"+ @cauthu.hinhanh %> width = "300" height = "400" >
+			</div>
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="table-responsive">          
+					  <table class="table">
+					    <thead>
+					      <tr>
+					        <th>Thông tin</th>
+					        <th>Dữ liệu</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+					        <td>Quốc tịch</td>
+					        <td><%= @cauthu.quoctich%></td>
+					      </tr>
+					      <tr>
+					        <td>Ngày sinh</td>
+					        <td><%= @cauthu.ngaysinh%></td>
+					      </tr>
+					      <tr>
+					        <td>Đội bóng</td>
+					        <td><%= Doibong.find(@cauthu.doibong_id).ten%></td>
+					      </tr>
+					      <tr>
+					        <td>Chiều cao</td>
+					        <td><%= @cauthu.chieucao%></td>
+					      </tr>
+					      <tr>
+					        <td>Cân nặng</td>
+					        <td><%= @cauthu.cannang%></td>
+					      </tr>
+					      <tr>
+					        <td>Vị trí</td>
+					        <td><%= Vitri.find(@cauthu.vitri_id).tenvitri%></td>
+					      </tr>
+					    </tbody>
+					  </table>
+					  </div>
+				  </div>
+			</div>
+			     
+	   </div>
+	    <div class="modal-footer">
+	      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	    </div>
+	  </div>
+	  
+	</div>
+</div>
+  
+

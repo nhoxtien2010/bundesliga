@@ -1,0 +1,52 @@
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<p id="notice"><%= notice %></p>
+		<%= image_tag("sanvandong/"+ @sanvandong.hinhanh.to_s, :height =>"400px", :width=>"600px" )%>
+
+		<%= image_tag("sanvandong/"+ @sanvandong.hinhanh1.to_s , :height =>"400px", :width=>"600px" )%>
+		<%= image_tag("sanvandong/"+ @sanvandong.hinhanh2.to_s , :height =>"400px", :width=>"600px") %>
+		
+		<p>
+		  <strong>Capacity:</strong>
+		  <%= @sanvandong.soghe %>
+		</p>
+		
+		<p>
+		  <strong>Address:</strong>
+		  <%= @sanvandong.diachi %>
+		</p>
+		
+		<p>
+		  <strong>Club:</strong>
+		  <%= Doibong.find(@sanvandong.doibong_id).ten %>
+		</p>
+		<p>
+		  <strong>Name:</strong>
+		  <%= @sanvandong.ten %>
+		</p>
+		<p>
+		  <strong>Infomation:</strong>
+		  <%= @sanvandong.thongtin %>
+		</p>
+		
+		<p>
+		  <strong>Extra infomation:</strong>
+		  <%= @sanvandong.chitietthongtin %>
+		</p>
+		
+		<p>
+		  <strong>Year of celebrate:</strong>
+		  <%= @sanvandong.thanhlap %>
+		</p>
+		
+		<p>
+		  <strong>Sticker: </strong>
+		  <%= @sanvandong.ve %>
+		</p>
+		
+		<%= link_to 'Edit', edit_sanvandong_path(@sanvandong) %> |
+		<%= link_to 'Back', admin_index_path %>
+	</div>
+</div>

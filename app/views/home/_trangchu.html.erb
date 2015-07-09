@@ -1,0 +1,163 @@
+
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$("#featured").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
+	});
+</script>
+   <div id="content">
+  <div id="left">
+  	<div id="content_noibat">
+<table width="100%" class="bxh">
+<tr>
+    	<td class="tuade" colspan="3">
+        <a href="#>"><b><p><u> Focus News</u></p></b></a>
+        </td>
+
+   </tr>
+</table>
+</div>
+<div id="featured" style="height: 320px">
+			  	<% i=1 -%>
+		  <ul class="ui-tabs-nav" style="height: 310px">
+		  	<%@baiviets.each do |baiviet|%>
+	        <li class="ui-tabs-nav-item " style = "overflow: hidden; text-overflow:elipse" id="<%= "nav-fragment-"+ i.to_i.to_s%>">
+	        	<a href="<%= "#fragment-"+ i.to_i.to_s%>">
+	        				  		        	<% i+=1 -%>
+	        		<img style="width: 110px ;height: 54px" src="/assets/tintuc/<%= baiviet["hinhanh"]%>" alt="" />
+	        		<span><%= baiviet["tieude"]%></span>
+	        	</a>
+	        </li>		
+	       <%end%>
+	      </ul>
+	    <!-- First Content -->
+	   		<% a=1 -%>
+	    <%@baiviets.each do |baiviet|%>
+	    <div id="<%= "fragment-"+ a.to_i.to_s%>" class="ui-tabs-panel" style="">
+	    	<% a+=1 -%>	
+			<img style="width: 410px ;height: 249px" src="/assets/tintuc/<%= baiviet["hinhanh"]%>" alt="" />
+			 <div class="info">
+				<p style="color: #000">
+					<h2 style="margin-top: 65px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;width: 400px" >
+					<a  href="<%= "/home/chitiet_baiviet/"+baiviet["id"].to_s%>" ><%= baiviet["tieude"]%>
+				</a>
+					</h2>
+				</p>
+				<p style="color: #000"><%= baiviet["noidung"]%><a class="label label-default" href="<%= "/home/chitiet_baiviet/"+baiviet["id"].to_s%>" >Detail..</a></p>
+			 </div>
+	    </div>
+	    <%end%>
+		</div>
+	
+<div id="content_noibat">
+<table width="100%" class="bxh" >
+<tr>
+    	<td class="tuade" colspan="10">
+        <a href="#"><b><p><u><i>Match on today</i></u></p></b></a>
+        </td>
+
+</tr>
+                	<tr style="color: #fff"  bgcolor="#000" align="center">
+                    	<td colspan="4">Match</td>
+                        <td colspan="3">Time</td>
+                        <td colspan="3">Goals</td>
+                        
+                    </tr>
+                    <tr bgcolor="#E5E5E5">
+                    	<td height="24" rowspan="3">1/12</td>
+                        <td align="right" style="color:#F00">Bayern München</td>
+                        <td style="color:#090">19:30</td>
+                        <td>Bvb Dormun</a></td>
+                        <td align="center"><strong>1/4 : 0</strong></td>
+                                                					
+                        <td>0.89</td>
+                        <td>-0.95</td>
+                        <td><strong>2 3/4</strong></td>
+                        <td>0.96</td>
+                        <td>0.94</td>
+                        
+                    </tr>
+                    <tr bgcolor="#D4D4D4">
+                    	<td align="right" style="color:#F00">Wolfsburg</td>
+                        <td style="color:#090">19:30</td>
+                        <td>Leverkusen</a></td>
+                        <td align="center"><strong>1/2 : 0</strong></td>
+                                                					
+                        <td>-0.91</td>
+                        <td>0.85</td>
+                        <td><strong>2 1/4</strong></td>
+                        <td>0.86</td>
+                        <td>-0.96</td>
+                    </tr>
+  </table>
+  </div>
+  
+<div id="content_noibat">
+<table width="100%" class="table_about" align="center" cellpadding="5">
+	<tr>
+    	<td colspan="2" class="tuade"style=" background:url(/assets/content/td.png)" >
+         <a href="#"><p><b>DFL News</b></p></a>
+        </td>	
+
+    </tr>
+    	<tr>
+        <td><img width="254" height="145" src="/assets/content/img_about1.PNG" frameborder="0" allowfullscreen></td>
+    	<td>
+			<a href=""><h2><b>Technology confirmed</b></h2></a> Bundesliga will use goal-line technology at its 18 stadiums from scratch 2015/16 season after a largely elected from more than 18 clubs
+				
+			<br />
+        </td>
+
+    </tr>
+        	<tr>
+            <td><img  width="254" height="145" src="/assets/content/img_about2.PNG" frameborder="0" allowfullscreen></td>
+    	<td>
+		<a href="about2.php"><h2><b>2015/16 schedule set</b></h2></a> The full schedule for the season 2015/16 interim and Bundesliga 2 Bundesliga campaign has been completed, with more days DFB Cup<br />
+        </td>
+
+    </tr>
+        	<tr>
+            <td><img width="254" height="145" src="/assets/content/img_about3.PNG" frameborder="0" allowfullscreen></td>
+    	<td>
+			<a href="about3.php"><h2><b>Right handed</b></h2></a> Audiovisual media rights for Bundesliga football has been given a further 18 countries, a move that will double the income from copyright rather 2015/16<br />
+        </td>
+
+    </tr>
+    </table>
+
+</div>
+
+<div id="content_noibat">
+<table width="100%" class="table_vd" align="center">
+	<tr>
+    	<td class="tuade" colspan="4">
+        <a href="#"><b><p><u>Goals videos</u></p></b></a>
+        </td>
+   </tr>
+</table>
+ <div id="products" class="list-group">
+	 <%@videos.each do |video|%>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail" style = "height: 300px">
+                <video class="group list-group-image" src="/assets/videos/<%= video["video"]%> "  controls="controls"></video>
+                <div class="caption">
+                    <h5 class="group inner list-group-item-heading text-center">
+                      <b><%= video["tieude"]%> </b></h5>
+                    <p class="group inner list-group-item-text text-justify" style = "height: 100px">
+                        <%= video["tuade"]%></p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="<%= "/home/chitiet_video/"+video["id"].to_s%>"> Details..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <%end%>
+    </div>
+</div>
+  	</div>
+ <div id="right">
+<%=render "home/right" %>
+ 	</div>
+                       </div>
+                       <div style="clear:both"></div>

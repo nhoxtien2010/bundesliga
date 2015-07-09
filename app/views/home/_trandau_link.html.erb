@@ -1,0 +1,94 @@
+<center >
+  <button style="margin-top:10px;color: black " type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal<%= @current_trandau.id%>" >Details...</button>
+</center>
+  <!-- Modal -->
+<div class="modal fade" id="myModal<%= @current_trandau.id%>" role="dialog">
+	<div class="modal-dialog">
+	
+	  <!-- Modal content-->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <button type="button" class="close" data-dismiss="modal">&times;</button>
+	      <h1 class="modal-title"><center><%= @current_trandau.banthangdoinha.to_s+" - " +@current_trandau.banthangdoikhach.to_s%></center></h4>
+	    </div>
+	    <div class="modal-body">
+	    	<div class="row text-center">
+
+	    		<table width="100%" class="ltd" >
+        	<tr align="center" style="background-color: #000;color: #fff">
+            	<td ><h4><b>Time</b></h4></td>
+                <td ><h4><b>Home</b></h4></td>
+                <td ><h4><b>Visiter</b></h4></td>
+            </tr>
+           
+           	 <tr align="center">
+	            <td><%= @current_trandau.thoigian%></td>
+	            <td><img alt="7" height="25" src="/assets/logo/<%= Doibong.find(@current_trandau.doinha_id).logo%>" width="25"><%= Doibong.find(@current_trandau.doinha_id).ten%></td>
+	            <td><img alt="7" height="25" src="/assets/logo/<%= Doibong.find(@current_trandau.doikhach_id).logo%>" width="25"><%= Doibong.find(@current_trandau.doikhach_id).ten%></td>            
+ 			 </tr>
+     		 
+        </table>
+				
+			</div>
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+
+					<!-- ###################table ban thang################## -->
+					<h3 class = "text-center">Goals</h3>
+					<div class="table-responsive">          
+					  <table class="table">
+					    <thead>
+					      <tr>
+					        <th>Player</th>
+					        <th>Time</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					    	<%banthangs = Banthang.where(:Chitiettrandau_id=> @current_trandau)%>
+					    	<% banthangs.all.each do |banthang|%>
+						      <tr>
+						        <td><%= Cauthu.find(banthang.cauthu_id).ten %></td>
+						        <td><%= banthang.thoigian%></td>
+						      </tr>	
+					      <% end %>				      
+					    </tbody>
+					  </table>
+				  </div>
+
+				  <!-- #####################table pham loi################## -->
+
+					<h3 class = "text-center">Cards</h3>
+				  <div class="table-responsive">          
+					  <table class="table">
+					    <thead>
+					      <tr>
+					        <th>Player</th>
+					        <th>Time</th>
+					        <th>Card</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					    	<% phamlois = Phamloi.where(:Chitiettrandau_id=> @current_trandau)%>
+					    	<% phamlois.all.each do |phamloi|%>
+					      <tr>
+					        <td><%= Cauthu.find(phamloi.cauthu_id).ten %></td>
+					        <td><%= phamloi.thoigian %></td>
+					        <td><%=image_tag "thephat/"+Thephat.find(phamloi.thephat_id).hinhanh.to_s, :width=>"15px", :height=>"20px" %></td>
+					      </tr>					      
+					      <% end %>
+					    </tbody>
+					  </table>
+				  </div>
+
+
+			  </div>
+			</div>
+			     
+	   </div>
+	    <div class="modal-footer">
+	      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	    </div>
+	  </div>
+	  
+	</div>
+</div>

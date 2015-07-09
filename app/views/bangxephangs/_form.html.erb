@@ -1,0 +1,30 @@
+
+<div class="row">
+	<div class= "col-md-4 col-md-offset-4">
+		<%= form_for(@bangxephang) do |f| %>
+		  <% if @bangxephang.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@bangxephang.errors.count, "error") %> prohibited this bangxephang from being saved:</h2>
+		
+		      <ul>
+		      <% @bangxephang.errors.full_messages.each do |message| %>
+		        <li><%= message %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		
+		  <div class="field">
+		   <%= f.label :vongdau_id, "Number of Round" %><br>    
+			    <%= f.select(:vongdau_id,[],{},{:class=> "form-control"}) do %>
+			  		<% Vongdau.all.each do |c| -%>
+			    	<%= content_tag(:option, c.stt, value: c.id) %>
+			  	<% end %>
+				<% end %>
+		  </div>
+		  <div class="actions">
+		    <%= f.submit "Submit", :class =>"btn btn-success"%>
+		  </div>
+		<% end %>
+	</div>
+</div>

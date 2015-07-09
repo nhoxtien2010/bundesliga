@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid" style="background-color: ">    
+    <div class="navbar-header" >
+      <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+	<div style="margin-top:-11PX;margin-left: -11px"><%= image_tag("logo/BUNDESLIGA.png", :alt => "rss feed" ) %></div>
+    </a>     
+    </div>
+      <div id="thumbs-wrapper">
+  <div id="thumbs-container">
+  	<%Doibong.all.each do |doibong|%>
+  	
+  	<a href="<%= "/home/chitietdoibong/"+doibong.id.to_s%>"><img height="52" src="<%= "/assets/logo/"+doibong.logo%>" width="60", class ="logo-doibong"></a>
+  	<%end%>	 
+  </div>
+</div>
+</nav>

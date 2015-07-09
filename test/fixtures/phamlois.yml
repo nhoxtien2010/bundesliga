@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  thoigian: 
+  thephat_id: 
+  cauthu_id: 
+  chitiettrandau_id: 
+
+two:
+  thoigian: 
+  thephat_id: 
+  cauthu_id: 
+  chitiettrandau_id: 

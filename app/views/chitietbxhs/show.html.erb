@@ -1,0 +1,64 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+
+		<p id="notice"><%= notice %></p>
+		
+		<p>
+		  <strong>Rate Number</strong>
+		  <%= @chitietbxh.thuhang %>
+		</p>
+		
+		<p>
+		  <strong>Number of match played</strong>
+		  <%= @chitietbxh.sotranthidau %>
+		</p>
+		
+		<p>
+		  <strong>Point</strong>
+		  <%= @chitietbxh.diem %>
+		</p>
+		
+		<p>
+		  <strong>Sum of lost goal:</strong>
+		  <%= @chitietbxh.tongsobanthua %>
+		</p>
+		
+		<p>
+		  <strong>Sum of goal:</strong>
+		  <%= @chitietbxh.tongsobanthang %>
+		</p>
+		
+		<p>
+		  <strong>Number of Win:</strong>
+		  <%= @chitietbxh.sotranthang %>
+		</p>
+		
+		<p>
+		  <strong>Number of Draw:</strong>
+		  <%= @chitietbxh.sotranghoa %>
+		</p>
+		
+		<p>
+		  <strong>Number of lost:</strong>
+		  <%= @chitietbxh.sotrangthua %>
+		</p>
+		
+		<p>
+		  <strong>Stat:</strong>
+		  <%= Vongdau.find(Bangxephang.find(@chitietbxh.bangxephang).vongdau_id).stt %>
+		</p>
+		
+		<p>
+		  <strong>Club:</strong>
+		  <%= Doibong.find(@chitietbxh.doibong).ten %>
+		</p>
+		
+		<p>
+		  <strong>Rating:</strong>
+		  <%= Lenxuonghang.find(@chitietbxh.lenxuonghang).ten %>
+		</p>
+		
+		<%= link_to 'Edit', edit_chitietbxh_path(@chitietbxh) %> |
+		<%= link_to 'Back', admin_index_path %>
+	</div>
+</div>

@@ -1,0 +1,66 @@
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<p id="notice"><%= notice %></p>
+
+		<img height="120" src="<%= "/assets/logo/"+@doibong.logo.to_s%>" width="120">
+
+		<p>
+		  <strong>Name:</strong>
+		  <%= @doibong.ten %>
+		</p>
+		
+		<p>
+		  <strong>Address:</strong>
+		  <%= @doibong.diachi %>
+		</p>
+		
+		<p>
+		  <strong>Phone:</strong>
+		  <%= @doibong.dienthoai %>
+		</p>
+		
+		<p>
+		  <strong>Fax:</strong>
+		  <%= @doibong.fax %>
+		</p>
+		
+		<p>
+		  <strong>Website:</strong>
+		  <%= @doibong.website %>
+		</p>
+		
+		<p>
+		  <strong>Facebook:</strong>
+		  <%= @doibong.facebook %>
+		</p>
+		
+		<p>
+		  <strong>Date of celebrate:</strong>
+		  <%= @doibong.ngaytl %>
+		</p>
+		
+		<p>
+		  <strong>Club color:</strong>
+		  <%= @doibong.mauao %>
+		</p>
+		
+		<p>
+		  <strong>Doctor:</strong>
+		  <%= @doibong.bacsy %>
+		</p>
+		
+		<p>
+		  <strong>Press spokerman:</strong>
+		  <%= @doibong.nguoidaidientruyenthong %>
+		</p>
+		
+		<p>
+		  <strong>Assistant:</strong>
+		  <%= Huanluyenvien.find(@doibong.huanluyenvien).ten %>
+		</p>
+		
+		<%= link_to 'Edit', edit_doibong_path(@doibong) %> |
+		<%= link_to 'Back', admin_index_path %>
+	</div>
+</div>

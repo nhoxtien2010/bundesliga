@@ -1,0 +1,76 @@
+	<script type="text/javascript">
+    $(document).ready(function() {
+    $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+    $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+});
+  </script>
+<div id="content">
+	<div id="content_content">
+  	<%=render "home/menu_chitietdb" %>
+        <div class="panel panel-info">
+    	<div class="panel-heading" style="background:url(/assets/content/td3.png)repeat;color: #fff;font-size: 24px;padding:0px 4px 0px 4px"><b> Newsletters</b>
+    	<div class="btn-group" style="margin-top:2px;float: right">
+            <a href="#" id="list" class="btn btn-sm"><span class="glyphicon glyphicon-th-list">
+            </span>List</a> <a href="#" id="grid" class="btn btn-sm">
+            	<span  class="glyphicon glyphicon-th"></span>Grid</a>
+        </div>
+    	</div>
+    	</div>     
+    <div id="products" class="row list-group">
+    	 <%@baiviets.each do |baiviet|%>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="/assets/tintuc/<%= baiviet["hinhanh"]%>" />
+                <div class="caption">
+                    <h5 style="height: 58px;overflow:hidden;" class="group inner list-group-item-heading">
+                      <b><%= baiviet["tieude"]%> </b></h5>
+                    <p style="height: 58px;overflow:hidden;" class="group inner list-group-item-text">
+                    	<%= baiviet["noidung"]%>
+                    </p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="<%= "/home/chitiet_baiviet/"+baiviet["id"].to_s%>"> Details..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+             <%end%>
+        </div>
+        <div class="panel panel-info">
+    	<div class="panel-heading" style="background:url(/assets/content/td3.png)repeat;color: #fff;font-size: 24px;padding:0px 4px 0px 4px"><b> News Videos</b>
+    	</div>
+    	</div>     
+   
+    <div id="products" class="row list-group">
+    	 <%@videos.each do |video|%>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <a><video class="group list-group-image" src="/assets/videos/<%= video["video"]%> "  controls="controls"></video></a>
+                <div class="caption">
+                    <h5 style="height: 58px;overflow:hidden;" class="group inner list-group-item-heading">
+                      <b><%= video["tieude"]%> </b></h5>
+                    <p style="height: 58px;overflow:hidden;" class="group inner list-group-item-text">
+                    	<%= video["noidung"]%>
+                    </p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                </p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href=""> Details..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <%end%>
+    </div>
+    </div>
+    </div>
+<div style="clear:both"></div>

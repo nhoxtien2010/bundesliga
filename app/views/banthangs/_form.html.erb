@@ -1,0 +1,59 @@
+<%= form_for(@banthang) do |f| %>
+  <% if @banthang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@banthang.errors.count, "error") %> prohibited this banthang from being saved:</h2>
+
+      <ul>
+      <% @banthang.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :thoigian %><br>
+    <%= f.text_field :thoigian %>
+  </div>
+  
+  <div class="field">
+   <%= f.label :chitiettrandau_id %><br>    
+	    <%= f.select(:chitiettrandau_id) do %>
+	  		<% Chitiettrandau.all.each do |ct| -%>
+	  			<% @cttd = ct-%>
+		  		<% c= Trandau.find(ct.trandau_id)-%>
+		  		<% s = Doibong.find(c.doinha_id).ten.to_s+'-'+Doibong.find(c.doikhach_id).ten.to_s+'-'+Vongdau.find(c.vongdau).stt.to_s%>
+		    	<%= content_tag(:option, s , value: ct.id) %>
+	  	<% end %>
+		<% end %>
+  </div>
+  <div class="field" id = "cauthu_div">   		    
+	  <%= f.select(:cauthu_id) do %>	 
+	    	   	
+	  		<% Cauthu.all.each do |c| -%>
+	    	<%= content_tag(:option, c.ten, value: c.id) %>
+	  	<% end %>
+		<% end %>
+ 	</div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <%= javascript_tag do %>
+  	$(function() {	
+			$( "#banthang_chitiettrandau_id" ).change(function () {		    
+		  var cttd_val = $(this).val();
+		  $(this).append("<%@cttd_val = cttd_val%>")
+		  console.log(<%cttd_val%>);
+		  <%td_val = Trandau.find(Chitiettrandau.find(@cttd_val).trandau_id)%>
+		  
+		  console.log(<%= td_val %>);
+		    
+		    
+		    
+		    
+		    		        
+		  });
+		});
+	<% end %>
+<% end %>
